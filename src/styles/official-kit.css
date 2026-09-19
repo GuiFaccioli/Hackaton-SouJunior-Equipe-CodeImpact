@@ -1,0 +1,84 @@
+/*
+  Confirmed from the UI Kit assets currently stored in docs/Ui-Kit.
+  Keep these overrides isolated so the provisional presentation can be
+  replaced when the final Figma screens arrive.
+*/
+:root {
+  --prototype-highlight: #3c7ef9;
+  --prototype-paper: #ffffff;
+  --prototype-soft: #edf3ff;
+  --prototype-line: #c8d1e0;
+  --prototype-muted: #e5eaf2;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(126px, 15vw, 168px);
+  height: auto;
+}
+
+.testimonial-card__author {
+  display: grid;
+  gap: 4px;
+  margin-top: 24px;
+  border-top: 1px solid var(--prototype-line);
+  padding-top: 14px;
+}
+
+.testimonial-card__author strong {
+  font-family: 'Funnel Sans', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+}
+
+.testimonial-card__author span {
+  color: #656d7a;
+  font-size: 0.78rem;
+}
+
+.testimonial-card--placeholder {
+  border-style: dashed;
+  background: var(--prototype-soft);
+}
+
+.transparency-records {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--prototype-line);
+  padding-top: 28px;
+}
+
+.transparency-records h3 {
+  margin-bottom: 18px;
+}
+
+.transparency-records ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transparency-records li {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  border-bottom: 1px solid var(--prototype-muted);
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.transparency-records time {
+  color: #656d7a;
+  font-variant-numeric: tabular-nums;
+}
+
+.transparency-records strong {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.status-message {
+  color: #a9c6ff;
+}
