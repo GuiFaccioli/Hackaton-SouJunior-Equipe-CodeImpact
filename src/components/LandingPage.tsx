@@ -4,6 +4,7 @@ import { Header } from './Header'
 import { Hero } from './Hero'
 import { ImpactSection } from './ImpactSection'
 import { SupportSection } from './SupportSection'
+import { SupporterCardGenerator } from './SupporterCardGenerator'
 import { SupportersRanking } from './SupportersRanking'
 import { Testimonials } from './Testimonials'
 import { TransparencySection } from './TransparencySection'
@@ -20,6 +21,7 @@ export function LandingPage() {
         <TransparencySection />
         <SupportersRanking />
         <SupportSection />
+        <SupporterCardGenerator />
       </main>
       <Footer />
     </div>
