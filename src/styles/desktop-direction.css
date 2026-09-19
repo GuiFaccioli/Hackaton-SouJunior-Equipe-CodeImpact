@@ -1,0 +1,311 @@
+/*
+  Desktop-first art direction.
+  This is intentionally separate from the base refinement layer so the final
+  Figma can replace the composition without changing the landing behavior.
+*/
+:root {
+  --desktop-blue: #3c7ef9;
+  --desktop-blue-soft: #edf3ff;
+  --desktop-ink: #171717;
+  --desktop-night: #0e151f;
+  --desktop-paper: #ffffff;
+  --desktop-line: #d7dfec;
+}
+
+.page-shell {
+  width: min(1220px, calc(100% - 48px));
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--desktop-ink);
+  background: var(--desktop-blue);
+}
+
+.hero::after {
+  position: absolute;
+  right: -120px;
+  bottom: -210px;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgb(23 23 23 / 30%);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .eyebrow {
+  color: var(--desktop-ink);
+}
+
+.hero__description,
+.hero__minimum-support {
+  color: rgb(23 23 23 / 78%);
+}
+
+.hero .text-link {
+  color: var(--desktop-ink);
+}
+
+.hero-visual {
+  border-radius: 16px;
+  color: var(--desktop-paper);
+  background: var(--desktop-night);
+}
+
+.hero-visual::before {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 10px;
+  content: '';
+  pointer-events: none;
+}
+
+.hero-visual__tag {
+  z-index: 2;
+  border-color: var(--desktop-blue);
+  color: var(--desktop-ink);
+  background: var(--desktop-blue);
+}
+
+.hero-visual__orbit {
+  border-color: rgb(255 255 255 / 34%);
+}
+
+.hero-visual__core {
+  z-index: 1;
+  width: clamp(190px, 24vw, 244px);
+  height: clamp(190px, 24vw, 244px);
+  border: 0;
+  border-radius: 16px;
+  color: var(--desktop-ink);
+  background: var(--desktop-blue);
+}
+
+.hero-visual__core strong {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+}
+
+.hero-visual__node {
+  z-index: 1;
+  border-color: rgb(255 255 255 / 58%);
+  color: var(--desktop-ink);
+  background: var(--desktop-paper);
+}
+
+.hero-visual__caption {
+  z-index: 1;
+  color: #e6ecf5;
+}
+
+.section--paper {
+  background: var(--desktop-blue-soft);
+}
+
+.section-heading--split > p {
+  max-width: 42ch;
+}
+
+.metrics-grid {
+  gap: 0 24px;
+}
+
+.metric-card:first-child {
+  border-radius: 16px;
+  background: var(--desktop-blue);
+}
+
+.testimonial-grid {
+  gap: 0 38px;
+}
+
+.testimonial-card:first-child {
+  background: transparent;
+}
+
+.testimonial-card:nth-child(2) {
+  border-bottom: 1px solid var(--desktop-line);
+  background: var(--desktop-paper);
+}
+
+.testimonial-card--placeholder {
+  background: transparent;
+}
+
+.transparency-card {
+  min-height: 100%;
+  color: var(--desktop-ink);
+  background: var(--desktop-blue);
+}
+
+.supporter-card:nth-child(2) {
+  background: var(--desktop-paper);
+}
+
+.card-generator {
+  position: relative;
+}
+
+.card-generator::before {
+  position: absolute;
+  top: -32px;
+  right: 0;
+  width: 112px;
+  height: 8px;
+  background: var(--desktop-blue);
+  content: '';
+}
+
+@media (max-width: 699px) {
+  .page-shell {
+    width: min(100% - 32px, 1220px);
+  }
+
+  .hero {
+    padding-top: 54px;
+  }
+
+  .hero::after {
+    right: -220px;
+    bottom: -260px;
+    width: 390px;
+    height: 390px;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+  }
+
+  .hero-visual::before {
+    inset: 12px;
+  }
+
+  .hero-visual__caption {
+    right: 22px;
+    bottom: 24px;
+  }
+
+  .metrics-grid {
+    gap: 0 16px;
+  }
+
+  .metric-card:first-child {
+    grid-column: span 2;
+  }
+
+  .card-generator::before {
+    top: -20px;
+    width: 72px;
+  }
+}
+
+@media (min-width: 700px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(390px, 0.95fr);
+    min-height: 650px;
+    align-items: stretch;
+  }
+
+  .hero__copy {
+    align-self: center;
+    padding: 48px 0;
+  }
+
+  .hero-visual {
+    min-height: 610px;
+    align-self: center;
+    transform: rotate(1.2deg);
+  }
+
+  .cause-grid,
+  .transparency-grid {
+    column-gap: clamp(56px, 9vw, 132px);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .metric-card:first-child {
+    grid-column: span 2;
+  }
+
+  .metric-card:not(:first-child) {
+    grid-column: span 1;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .testimonial-card:first-child {
+    grid-column: span 6;
+    grid-row: span 2;
+    min-height: 380px;
+    padding: 34px 38px 34px 0;
+  }
+
+  .testimonial-card:nth-child(2),
+  .testimonial-card:nth-child(3) {
+    grid-column: span 6;
+  }
+
+  .mural-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .supporter-card:first-child {
+    grid-column: span 6;
+    min-height: 270px;
+  }
+
+  .supporter-card:nth-child(2),
+  .supporter-card:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  .support-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 32px;
+  }
+
+  .support-option {
+    min-height: 250px;
+  }
+
+  .support-option:first-child {
+    padding-right: 28px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(500px, 0.88fr);
+    gap: 92px;
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    font-size: clamp(4.4rem, 7.3vw, 6rem);
+  }
+
+  .metrics-grid {
+    gap: 0 28px;
+  }
+
+  .metric-card:first-child {
+    grid-column: span 2;
+    padding: 34px;
+  }
+
+  .testimonial-card:first-child {
+    padding-right: 64px;
+  }
+}
