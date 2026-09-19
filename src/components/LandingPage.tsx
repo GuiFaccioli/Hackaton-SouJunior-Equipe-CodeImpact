@@ -1,10 +1,27 @@
+import { CauseSection } from './CauseSection'
+import { Footer } from './Footer'
+import { Header } from './Header'
+import { Hero } from './Hero'
+import { ImpactSection } from './ImpactSection'
+import { SupportSection } from './SupportSection'
+import { SupportersRanking } from './SupportersRanking'
+import { Testimonials } from './Testimonials'
+import { TransparencySection } from './TransparencySection'
+
 export function LandingPage() {
   return (
     <div className="site-shell">
+      <Header />
       <main id="conteudo">
-        <h1>SouJunior</h1>
-        <p>Landing page em construção.</p>
+        <Hero />
+        <CauseSection />
+        <Testimonials />
+        <ImpactSection />
+        <TransparencySection />
+        <SupportersRanking />
+        <SupportSection />
       </main>
+      <Footer />
     </div>
   )
 }
