@@ -616,8 +616,31 @@ blockquote {
   font-size: 22px;
   margin-bottom: 12px;
 }
-.testimonial > strong {
+.testimonial-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.testimonial-name strong {
   font-size: 16px;
+}
+.linkedin-link {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+}
+.linkedin-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.linkedin-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 .testimonial > span:not(.quote-mark) {
   font-size: 14px;

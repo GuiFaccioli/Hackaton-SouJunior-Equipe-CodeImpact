@@ -72,13 +72,23 @@ const testimonials = [
     name: "Thais Escobar",
     role: "Product Owner",
     initial: "TE",
+    linkedinUrl: "https://www.linkedin.com/in/thais-escobar/",
   },
   {
+    quote:
+      "Como Mentora de Produto na SouJunior, ajudei iniciantes e pessoas em transição para Produto Digital a vivenciar a dinâmica de uma empresa de software, explorando problemas e soluções. Também mentorei integrantes de Design, que passaram a tomar boas decisões em pouco tempo, alinhados à estratégia da squad.",
+    name: "Manoela Albertoni",
+    role: "Associate Product Manager",
+    initial: "RM",
+    linkedinUrl: "https://www.linkedin.com/in/manoela-albertoni/",
+  },
+   {
     quote:
       "A interação com a comunidade e com os squads acabou proporcionando não apenas troca de conhecimento, mas também oportunidades de participar de novos projetos e até mesmo conhecer vagas que surgiram por meio dessas conexões.",
     name: "Renan Marques",
     role: "Associate Product Manager",
     initial: "RM",
+    linkedinUrl: "",
   },
 ];
 
@@ -321,7 +331,22 @@ export default function App() {
               <div className="quote-avatar" aria-hidden="true">
                 {quote.initial}
               </div>
-              <strong>{quote.name}</strong>
+              <div className="testimonial-name">
+                <strong>{quote.name}</strong>
+                {quote.linkedinUrl && (
+                  <a
+                    className="linkedin-link"
+                    href={quote.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`LinkedIn de ${quote.name} (abre em nova aba)`}
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.1h2.97v9.24ZM6.45 7.84a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.5h-2.97v-4.5c0-1.07-.02-2.44-1.49-2.44-1.49 0-1.72 1.16-1.72 2.36v4.58H9.19V9.1h2.85v1.26h.04c.4-.73 1.37-1.49 2.82-1.49 3.01 0 3.57 1.98 3.57 4.56v4.91Z" />
+                    </svg>
+                  </a>
+                )}
+              </div>
               <span>{quote.role}</span>
               <small>Comunidade SouJunior</small>
             </div>
