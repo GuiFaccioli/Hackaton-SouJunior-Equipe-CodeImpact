@@ -1,0 +1,673 @@
+{
+  "source": "pencil-snapshot.json",
+  "assets": {
+    "pendev-assets/image-import-17.png": [
+      {
+        "nodeId": "W3sve",
+        "name": "ChatGPT Image Sep 22, 2026, 06_46_33 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "xEcVB",
+        "name": "ChatGPT Image Sep 22, 2026, 06_46_33 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "MYwyf",
+        "name": "ChatGPT Image Sep 22, 2026, 06_46_33 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "M3SQU",
+        "name": "ChatGPT Image Sep 22, 2026, 06_46_33 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-8.png": [
+      {
+        "nodeId": "T6Vj7",
+        "name": "ChatGPT Image Sep 22, 2026, 06_56_51 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "Bg3Xs",
+        "name": "ChatGPT Image Sep 22, 2026, 09_50_27 PM 1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "JRtad",
+        "name": "ChatGPT Image Sep 22, 2026, 06_56_51 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "mIFK9",
+        "name": "ChatGPT Image Sep 22, 2026, 06_56_51 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "p3uLK2",
+        "name": "ChatGPT Image Sep 22, 2026, 06_56_51 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-7.png": [
+      {
+        "nodeId": "s5HLt1",
+        "name": "Mascot body clipped",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "OYht1",
+        "name": "Mascot hair visible above card",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "tvK33",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 2",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "J487jf",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "cfaHq",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "h3NzlF",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "hvXmW",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 2",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "dpHqk",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_52 PM 2",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-49.png": [
+      {
+        "nodeId": "PVgNq",
+        "name": "Coins independent layer",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "JYOI3",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_49 PM 2",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "vplyi",
+        "name": "ChatGPT Image Sep 22, 2026, 06_48_49 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-56.png": [
+      {
+        "nodeId": "AeKtT",
+        "name": "image 19",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "DEvtF",
+        "name": "image 19",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "ksAFN",
+        "name": "image 19",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "DDdnS",
+        "name": "image 19",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "W9KKLW",
+        "name": "image 19",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-87.png": [
+      {
+        "nodeId": "oh9yE",
+        "name": "image 21",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "H6To38",
+        "name": "image 21",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "pyoI9",
+        "name": "image 21",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "xEXAX",
+        "name": "image 21",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-96.png": [
+      {
+        "nodeId": "jpDL7",
+        "name": "Ellipse 2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "aWYas",
+        "name": "Ellipse 2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "IuSn4",
+        "name": "Ellipse 2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "XBxC7",
+        "name": "Ellipse 2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-111.png": [
+      {
+        "nodeId": "xPxzo",
+        "name": "ChatGPT Image Sep 22, 2026, 08_09_42 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "hg5yn",
+        "name": "ChatGPT Image Sep 22, 2026, 08_09_42 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "V9mFsX",
+        "name": "ChatGPT Image Sep 22, 2026, 08_09_42 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-15.png": [
+      {
+        "nodeId": "XWN8T",
+        "name": "section-2-3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "kNNhp",
+        "name": "section-6",
+        "property": "fill.2",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-94.png": [
+      {
+        "nodeId": "d7RSbT",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "L7ujlu",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "E6GH5O",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "X0qOI",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "rC8qR",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "d5heE",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "HwFDT",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "L4e7wd",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-90.png": [
+      {
+        "nodeId": "twqhp",
+        "name": "icon/valor-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "J3Mxi",
+        "name": "icon/linha-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "de631",
+        "name": "icon/valor-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "xHtpU",
+        "name": "icon/valor-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "hvBOS",
+        "name": "icon/linha-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-99.png": [
+      {
+        "nodeId": "Zcw1E",
+        "name": "icon/valor-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "bZtpJ",
+        "name": "icon/valor-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "YXCbQ",
+        "name": "icon/valor-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-112.png": [
+      {
+        "nodeId": "NRQBK",
+        "name": "icon/linha-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "kAiG6",
+        "name": "icon/linha-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "P81kJT",
+        "name": "icon/linha-2",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-107.png": [
+      {
+        "nodeId": "N3OnAO",
+        "name": "icon/linha-3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "hPDJw",
+        "name": "icon/linha-3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "OaFVT",
+        "name": "icon/linha-3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-114.png": [
+      {
+        "nodeId": "BYMbE",
+        "name": "icon/linha-4",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "e0gYx",
+        "name": "icon/linha-4",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "P3lP6c",
+        "name": "icon/linha-4",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-101.png": [
+      {
+        "nodeId": "kD1hY",
+        "name": "icon/linha-5",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "Ur8Wi",
+        "name": "icon/linha-5",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "q4WQn",
+        "name": "icon/linha-5",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-61.png": [
+      {
+        "nodeId": "Bg3Xs",
+        "name": "ChatGPT Image Sep 22, 2026, 09_50_27 PM 1",
+        "property": "fill.0",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-106.png": [
+      {
+        "nodeId": "aKkLj",
+        "name": "Ellipse 3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "WBhGl",
+        "name": "Ellipse 3",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-95.png": [
+      {
+        "nodeId": "kNNhp",
+        "name": "section-6",
+        "property": "fill.1",
+        "enabled": false,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-92.png": [
+      {
+        "nodeId": "dgTaO",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "wiq2U",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "H9Z8R",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "nzaZb",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "Scb6T",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "damgo",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "g3wxst",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-97.png": [
+      {
+        "nodeId": "tsxhK",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "Z79IUd",
+        "name": "icon",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "B0uit3",
+        "name": "icon",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "sbhhg",
+        "name": "icon",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-109.png": [
+      {
+        "nodeId": "AnJGZ",
+        "name": "ChatGPT Image Sep 22, 2026, 09_05_19 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-100.png": [
+      {
+        "nodeId": "LNQEx",
+        "name": "Avatar",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      },
+      {
+        "nodeId": "h78yJQ",
+        "name": "Avatar",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      }
+    ],
+    "pendev-assets/image-import-89.png": [
+      {
+        "nodeId": "Q0A2w",
+        "name": "Avatar",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-110.png": [
+      {
+        "nodeId": "EO4qf",
+        "name": "Avatar",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": true
+      }
+    ],
+    "pendev-assets/image-import-41.png": [
+      {
+        "nodeId": "smSbZ",
+        "name": "icon/linha-1",
+        "property": "fill.1",
+        "enabled": true,
+        "desktop": false
+      },
+      {
+        "nodeId": "K1nqT",
+        "name": "ChatGPT Image Sep 22, 2026, 08_53_05 PM 1",
+        "property": "fill",
+        "enabled": true,
+        "desktop": false
+      }
+    ]
+  }
+}
