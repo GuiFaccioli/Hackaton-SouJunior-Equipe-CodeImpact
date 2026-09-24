@@ -136,3 +136,21 @@ describe("Landing page", () => {
     ).toBe(true);
   });
 });
+
+describe("Landing page metric caveats", () => {
+  it("shows confirmation and variability caveats beside member metrics", () => {
+    render(<App />);
+
+    const members = screen
+      .getByRole("heading", { name: "Membros" })
+      .closest("article");
+    const supporters = screen
+      .getByRole("heading", { name: "Apoiadores" })
+      .closest("article");
+
+    expect(members?.textContent).toContain("120");
+    expect(members?.textContent).toMatch(/pendente de confirmação/i);
+    expect(supporters?.textContent).toContain("108");
+    expect(supporters?.textContent).toMatch(/pode variar/i);
+  });
+});

@@ -1,16 +1,16 @@
-﻿# Manutenção e versionamento
+# Manutenção e versionamento
 
 ## Antes de trabalhar
 
 1. Ler `AGENTS.md`, `README.md` e `docs/PROJECT_DOCUMENTATION.md`.
 2. Conferir `git status --short` para separar alterações existentes das novas.
-3. Executar `get_app_state` pelo MCP Pencil e confirmar `pendev.pen`.
+3. Executar `get_app_state` pelo MCP Pencil e confirmar `design/pendev.pen`.
 4. Ler o Desktop `EAVtG` e a seção que será alterada. Não usar filesystem para interpretar o conteúdo do `.pen`.
 5. Consultar `docs/design/DESIGN_REFERENCE.md` e preservar a composição do hero. O JSON registra uma captura, não o estado ao vivo do editor.
 
 ## Ao alterar
 
-- Visual editável: modificar `pendev.pen` pelo MCP, preservando camadas e URLs `pendev-assets/` relativas ao documento. Os arquivos ficam em `pendev-assets/`.
+- Visual editável: modificar `design/pendev.pen` pelo MCP, preservando camadas e URLs `pendev-assets/` relativas ao documento. Os arquivos ficam em `design/pendev-assets/`.
 - Comportamento web: modificar somente os arquivos necessários em `src/`.
 - Documentação: atualizar o contrato correspondente, registrar o motivo em `docs/CHANGELOG.md` e declarar divergências entre design e código.
 - Evitar modificar código para que a documentação pareça correta: registrar o estado real e tratar correções fora do escopo separadamente.
@@ -48,7 +48,7 @@ O inventário é plano: `parentId` + `index` reconstituem a árvore; omitir `chi
 
 1. Percorrer recursivamente as propriedades de cada nó, coletando preenchimentos `type: "image"` com `url`.
 2. Registrar o ID/nome do nó, o caminho da propriedade, o estado `enabled` e se o nó descende de `EAVtG` em `asset-references.json`.
-3. As URLs de `asset-references.json` e das propriedades do snapshot são relativas a `pendev.pen`; resolva-as a partir da raiz do repositório. O campo `path` do manifesto é relativo à raiz do repositório. Para cada arquivo referenciado, verificar existência, tamanho, dimensões PNG e SHA-256 pelo filesystem; isso não requer ler o `.pen` pelo filesystem.
+3. As URLs de `asset-references.json` e das propriedades do snapshot são relativas a `design/pendev.pen`; resolva-as a partir de `design/`. O campo `path` do manifesto é relativo à raiz do repositório. Para cada arquivo referenciado, verificar existência, tamanho, dimensões PNG e SHA-256 pelo filesystem; isso não requer ler o `.pen` pelo filesystem.
 4. Verificar usos nos imports de `src/assets.ts` e URLs de `src/styles.css`; atualizar `asset-manifest.json`.
 5. Se surgirem imagens em strokes, overrides, variáveis ou novos tipos de propriedade, manter a coleta recursiva. Não limitar o inventário a `fill.url`.
 6. Inspecionar também scripts, shaders, refs, bibliotecas, URLs e fontes. Declarar o limite da API sobre imports/metadados da raiz.
@@ -62,9 +62,9 @@ O campo `enabled` do inventário descreve o preenchimento, não garante visibili
 Export(["EAVtG", "G8k5su"], "png", "<raiz-do-repositorio>/docs/design/previews", { scale: 0.5 });
 ```
 
-Substituir `<raiz-do-repositorio>` pelo caminho real. Conferir os caminhos retornados pelo MCP e verificar os PNGs. Não exportar por cima das imagens-fonte de `pendev-assets/`. As prévias representam o Pencil, não comprovam igualdade com o site.
+Substituir `<raiz-do-repositorio>` pelo caminho real. Conferir os caminhos retornados pelo MCP e verificar os PNGs. Não exportar por cima das imagens-fonte de `design/pendev-assets/`. As prévias representam o Pencil, não comprovam igualdade com o site.
 
-## Verificação de mudanças na aplicação
+## Verificação obrigatória
 
 ```sh
 npm test
@@ -73,15 +73,15 @@ npm run build
 git diff --check
 ```
 
-Registrar resultados reais em `docs/CHANGELOG.md`. Para mudanças só de documentação, verificar `git diff --check` e os links Markdown locais; não atribuir resultados de testes não executados à mudança. Se um comando falhar, não marcar a tarefa como validada. `typecheck` usa o tsconfig raiz de referências; o `tsc -b` do build é necessário para verificar efetivamente os projetos atuais.
+Registrar resultados reais em `docs/CHANGELOG.md`. Se um comando falhar, não marcar a tarefa como validada. `typecheck` usa o tsconfig raiz de referências; o `tsc -b` do build é necessário para verificar efetivamente os projetos atuais.
 
 Para mudança visual, verificar no navegador desktop e mobile e comparar com o frame correspondente. Para largura externa do hero, incluir 2560/3840 px. Para upload/card, verificar nome vazio, leitura pendente, arquivo inválido, limite de tamanho e download real do PNG. Testes em jsdom não verificam a aparência nem o Canvas real.
 
-Quando o inventário de design mudar, verificar também links locais, JSONs, IDs, relações de pais e hashes dos assets.
+Também verificar que todos os links locais da documentação existem, que os JSONs são válidos, que os IDs não estão duplicados, que os pais existem e que hashes dos assets correspondem aos arquivos.
 
 ## Git
 
-Devem ser versionáveis: `src/`, `index.html`, configurações, `package.json`, `package-lock.json`, `pendev.pen`, `pendev-assets/`, `README.md` e `docs/` atuais. Conferir o estado de `.gitignore` antes de adicionar arquivos.
+Devem ser versionáveis: `src/`, `index.html`, configurações, `package.json`, `package-lock.json`, `design/pendev.pen`, `design/pendev-assets/`, `README.md` e `docs/` atuais. No estado auditado, esses caminhos não são bloqueados pelo `.gitignore`.
 
 Não adicionar diretórios gerados, segredos ou temporários. Não usar `git add .` sem revisar as exclusões e alterações preexistentes. `git check-ignore -v --no-index <caminho>` identifica regras que impedem inclusão; saída vazia e código 1 significam ausência de regra correspondente.
 
