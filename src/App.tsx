@@ -30,32 +30,39 @@ const metrics = [
 ];
 const expenses = [
   {
-    name: "AWS",
+    name: "Servidores e infraestrutura",
     description: "Servidores e infraestrutura",
-    value: "R$ 595,15",
-    percent: 32.2,
+    value: "R$ 320",
+    percent: 45.71,
     image: assets.server,
   },
   {
-    name: "Vultr",
-    description: "Servidores e infraestrutura",
-    value: "R$ 757,85",
-    percent: 41,
-    image: assets.server,
+    name: "Ferramentas de colaboração",
+    description: "Ferramentas de colaboração",
+    value: "R$ 180",
+    percent: 25.71,
+    image: assets.hands,
   },
   {
-    name: "DigitalOcean",
-    description: "Infraestrutura em nuvem",
-    value: "R$ 8,78",
-    percent: 0.5,
-    image: assets.tools,
-  },
-  {
-    name: "name.com",
-    description: "Domínios do ecossistema",
-    value: "R$ 487,81",
-    percent: 26.4,
+    name: "Plataformas e domínios",
+    description: "Plataformas e domínios",
+    value: "R$ 90",
+    percent: 12.86,
     image: assets.globe,
+  },
+  {
+    name: "Comunicação e design",
+    description: "Comunicação e design",
+    value: "R$ 60",
+    percent: 8.57,
+    image: assets.pencil,
+  },
+  {
+    name: "Reserva Operacional",
+    description: "Reserva Operacional",
+    value: "R$ 50",
+    percent: 7.14,
+    image: assets.coin,
   },
 ];
 const testimonials = [
@@ -259,7 +266,7 @@ export default function App() {
                   <tfoot>
                     <tr>
                       <th scope="row">Total em 2026, até setembro</th>
-                      <td>R$ 1.849,59</td>
+                      <td>R$ 700/mês</td>
                     </tr>
                   </tfoot>
                 </table>

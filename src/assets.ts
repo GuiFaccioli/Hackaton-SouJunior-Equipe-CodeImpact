@@ -11,6 +11,9 @@ import avatar from "../design/pendev-assets/image-import-96.png";
 import ana from "../design/pendev-assets/image-import-100.png";
 import bruno from "../design/pendev-assets/image-import-89.png";
 import carla from "../design/pendev-assets/image-import-110.png";
+import pencil from "../design/pendev-assets/image-import-114.png";
+import hands from "../design/pendev-assets/image-import-112.png";
+import coin from "../design/pendev-assets/image-import-101.png";
 
 export const assets = {
   mascot,
@@ -26,4 +29,7 @@ export const assets = {
   ana,
   bruno,
   carla,
+  pencil,
+  hands,
+  coin
 };

@@ -434,6 +434,10 @@ table {
   border-collapse: collapse;
   text-align: left;
 }
+.expense-card table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
 caption {
   font-size: 13px;
   text-align: left;
@@ -500,16 +504,18 @@ tbody tr + tr {
   border-radius: 4px;
 }
 tfoot {
-  background: var(--blue);
   color: #fff;
+  border-top: 1px solid #f3f5fc;
 }
 tfoot th {
+  background: var(--blue);
   font-size: 13px;
   padding: 20px 14px;
   font-weight: 500;
   border-radius: 12px 0 0 12px;
 }
 tfoot td {
+  background: var(--blue);
   padding: 20px 14px;
   font-family: "Funnel Display", sans-serif;
   font-size: 24px;
