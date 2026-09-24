@@ -1586,3 +1586,32 @@ blockquote {
     transform: none;
   }
 }
+
+.button,
+.menu-toggle,
+.hero,
+.pale-section,
+.floating-member,
+.floating-support,
+.eyebrow,
+.member-top > span,
+.value-card,
+.expense-card,
+.metric,
+.testimonial,
+.testimonial > small,
+.plan,
+.plan-badge,
+.card-form,
+.card-form input,
+.card-preview,
+.preview-empty,
+.supporter-row,
+.supporter-badge,
+.footer-panel {
+  border-radius: 0;
+}
+
+.card-form input::file-selector-button {
+  border-radius: 0;
+}
