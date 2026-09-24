@@ -17,8 +17,16 @@ const metrics = [
   ],
   ["+50", "Pessoas empregadas", "Novas oportunidades por meio da SouJunior."],
   ["3", "Projetos em desenvolvimento", "Talentos conectados a desafios reais."],
-  ["120", "Membros", "Uma comunidade que aprende e constrói junto."],
-  ["108", "Apoiadores", "Pessoas que ajudam a manter essa história viva."],
+  [
+    "120",
+    "Membros",
+    "Uma comunidade que aprende e constrói junto. Número pendente de confirmação.",
+  ],
+  [
+    "108",
+    "Apoiadores",
+    "Pessoas que ajudam a manter essa história viva. O número pode variar.",
+  ],
 ];
 const expenses = [
   {
