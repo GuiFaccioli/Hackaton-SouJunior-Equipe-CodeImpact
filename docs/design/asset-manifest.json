@@ -1,0 +1,353 @@
+{
+  "capturedOn": "2026-09-23",
+  "method": "References from MCP Pencil; existence, PNG dimensions, bytes and SHA-256 from local filesystem; source imports from src/assets.ts and src/styles.css.",
+  "totalBytes": 23464961,
+  "assets": [
+    {
+      "path": "pendev-assets/image-import-7.png",
+      "exists": true,
+      "bytes": 1229646,
+      "width": 941,
+      "height": 1672,
+      "sha256": "b63f49360fed31a621ed1162f3c4a9709cc6166402a65cb67ee7cb7633a58903",
+      "designReferences": 8,
+      "desktopReferences": 2,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-8.png",
+      "exists": true,
+      "bytes": 173167,
+      "width": 1672,
+      "height": 941,
+      "sha256": "b9362bcbf66fa9b2db4b2539f45461563e96a25efd70260bf941e2c8ae33dca2",
+      "designReferences": 5,
+      "desktopReferences": 2,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/styles.css"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-15.png",
+      "exists": true,
+      "bytes": 827529,
+      "width": 1672,
+      "height": 941,
+      "sha256": "b3a2f9cf3dbae4c3dfd65c1b3533842e3b9469c4fa7e9cf343b720781ebf3cc1",
+      "designReferences": 2,
+      "desktopReferences": 2,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/styles.css"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-17.png",
+      "exists": true,
+      "bytes": 906624,
+      "width": 1672,
+      "height": 941,
+      "sha256": "d57d5ac6d306288d6d812551b1d6289d6612efb509eb50b1e4ed858159493ef2",
+      "designReferences": 4,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/styles.css"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-41.png",
+      "exists": true,
+      "bytes": 1129130,
+      "width": 1672,
+      "height": 941,
+      "sha256": "2cff377cff016dbf8ff29b69f1f7be028928a477491f11cfef687d0ac19111f4",
+      "designReferences": 2,
+      "desktopReferences": 0,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-49.png",
+      "exists": true,
+      "bytes": 606013,
+      "width": 941,
+      "height": 1672,
+      "sha256": "b6c2707a861772b269fab2918795379f23214b3b24e1fa1970a30c4c1ede9318",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-56.png",
+      "exists": true,
+      "bytes": 344987,
+      "width": 2170,
+      "height": 725,
+      "sha256": "56480845e95612a78c90f0ab158d5a172134b6e23cfdc8640b55f3b142757361",
+      "designReferences": 5,
+      "desktopReferences": 2,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-61.png",
+      "exists": true,
+      "bytes": 848131,
+      "width": 1672,
+      "height": 941,
+      "sha256": "68e099502483608fba3062527c117f350916eebbaf2a8d14c0aa3564a88dab91",
+      "designReferences": 1,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/styles.css"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-87.png",
+      "exists": true,
+      "bytes": 374491,
+      "width": 2191,
+      "height": 718,
+      "sha256": "2e39be9b5198548cee7c30885a98628a6f3484100d2a7b90fedd6b13f3713ec5",
+      "designReferences": 4,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-89.png",
+      "exists": true,
+      "bytes": 1776494,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "647f290747567e1807854b02b39c48697ea1bfd3aaf02c78a9bdbab99b65c295",
+      "designReferences": 1,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-90.png",
+      "exists": true,
+      "bytes": 732380,
+      "width": 921,
+      "height": 1014,
+      "sha256": "77774270c81ffc844f8f99cba180ef8bff7a454ce2ad295cdabe89d40b35dbe2",
+      "designReferences": 5,
+      "desktopReferences": 2,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-92.png",
+      "exists": true,
+      "bytes": 920467,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "cb462753f2d90f2570102d5fb9cd2bcd16615de7b13d6778626969cff97d89f4",
+      "designReferences": 7,
+      "desktopReferences": 7,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-94.png",
+      "exists": true,
+      "bytes": 363722,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "094d2f9bc32db5fe922a25939c94730d2dd6b7d632549f626fb1eed24c004aaa",
+      "designReferences": 8,
+      "desktopReferences": 7,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-95.png",
+      "exists": true,
+      "bytes": 370582,
+      "width": 1003,
+      "height": 1568,
+      "sha256": "8007030453de233c916179e72b0418c4cceb27cca797da7a1e27359bde865d1e",
+      "designReferences": 1,
+      "desktopReferences": 1,
+      "disabledReferences": 1,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-96.png",
+      "exists": true,
+      "bytes": 1799466,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "305fbf81ad60022aba6184869e46944659e287efe7e6b2495d9fd7807a335b75",
+      "designReferences": 4,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-97.png",
+      "exists": true,
+      "bytes": 791531,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c26badb57c36dbc5222075fa3a764236d5ad65c9647b4731262864bf0cb608b0",
+      "designReferences": 4,
+      "desktopReferences": 4,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-99.png",
+      "exists": true,
+      "bytes": 673174,
+      "width": 921,
+      "height": 933,
+      "sha256": "7355535ab875c7e1f3bd1390e5f9fac81ea63afadc9df8b1cd3c8821190a93b2",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-100.png",
+      "exists": true,
+      "bytes": 2059186,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "ce02b544fbc077a385bc94ecf56372f757c85ced5a2cef2d85f1891a3c96bd06",
+      "designReferences": 2,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-101.png",
+      "exists": true,
+      "bytes": 541311,
+      "width": 921,
+      "height": 933,
+      "sha256": "b981d03c52ed80d9252033da3381e1bcf943d5147d9361b4c5a3c462113e95e0",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-106.png",
+      "exists": true,
+      "bytes": 2130133,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c359d3299630cb872b0c640f398758e70b11a9b4ecc751ab4ac31d27fd8cbd41",
+      "designReferences": 2,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-107.png",
+      "exists": true,
+      "bytes": 566752,
+      "width": 921,
+      "height": 854,
+      "sha256": "4da8176b9858eb1227bb7f022f1c2fe78a858ec2db6deb6f637e6c6129cc388f",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-109.png",
+      "exists": true,
+      "bytes": 341743,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "6e5ff0a434704ada8fb2311cde3a487689d83c33c0198e2337c94bd5d6e2ca45",
+      "designReferences": 1,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-110.png",
+      "exists": true,
+      "bytes": 2044741,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "74a2eea279c5e6bc5be05ceed31ee1c7d9948231d2397d7afac7c91fbdc05a44",
+      "designReferences": 1,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-111.png",
+      "exists": true,
+      "bytes": 892997,
+      "width": 1159,
+      "height": 1358,
+      "sha256": "5180797cc62cca9887a5bfabb20223b0c9e6da68a1a0f8dd121fec67550abc72",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": [
+        "src/assets.ts"
+      ]
+    },
+    {
+      "path": "pendev-assets/image-import-112.png",
+      "exists": true,
+      "bytes": 460039,
+      "width": 921,
+      "height": 854,
+      "sha256": "f7ac35e59cd0d0949703855db5129ab69df654e2f9245eb218c3dec314f8f8a7",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": []
+    },
+    {
+      "path": "pendev-assets/image-import-114.png",
+      "exists": true,
+      "bytes": 560525,
+      "width": 921,
+      "height": 1028,
+      "sha256": "5830ff7ac38710a48087541b04c6f3abb168cb235c13a59a359e384d27ae93e1",
+      "designReferences": 3,
+      "desktopReferences": 1,
+      "disabledReferences": 0,
+      "webSources": []
+    }
+  ]
+}
