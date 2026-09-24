@@ -1,35 +1,57 @@
-import mascot from "../design/pendev-assets/image-import-7.png";
-import logo from "../design/pendev-assets/image-import-56.png";
-import coins from "../design/pendev-assets/image-import-49.png";
-import badge from "../design/pendev-assets/image-import-94.png";
-import patron from "../design/pendev-assets/image-import-109.png";
-import server from "../design/pendev-assets/image-import-90.png";
-import tools from "../design/pendev-assets/image-import-99.png";
-import globe from "../design/pendev-assets/image-import-107.png";
-import support from "../design/pendev-assets/image-import-111.png";
-import avatar from "../design/pendev-assets/image-import-96.png";
-import ana from "../design/pendev-assets/image-import-100.png";
-import bruno from "../design/pendev-assets/image-import-89.png";
-import carla from "../design/pendev-assets/image-import-110.png";
-import pencil from "../design/pendev-assets/image-import-114.png";
-import hands from "../design/pendev-assets/image-import-112.png";
-import coin from "../design/pendev-assets/image-import-101.png";
+﻿import mascot from "../design/pendev/assets/image-import-24.png";
+import mascotCropped from "../design/pendev/assets/mascot-cropped.png";
+import logo from "../design/pendev/assets/image-import-6.png";
+import coins from "../design/pendev/assets/image-import-5.png";
+import topCardLogo from "../design/pendev/assets/image-import-29.png";
+import topCardAvatar from "../design/pendev/assets/image-import-32.png";
+import support from "../design/pendev/assets/image-import.png";
+import grid from "../design/pendev/assets/image-import-46.png";
+import storiesBackground from "../design/pendev/assets/image-import-13.png";
+import footerBackground from "../design/pendev/assets/image-import-23.png";
+import footerArt from "../design/pendev/assets/image-import-25.png";
+import server from "../design/pendev/assets/image-import-44.png";
+import collaboration from "../design/pendev/assets/image-import-4.png";
+import valueTools from "../design/pendev/assets/image-import-35.png";
+import platform from "../design/pendev/assets/image-import-19.png";
+import communication from "../design/pendev/assets/image-import-45.png";
+import reserve from "../design/pendev/assets/image-import-56.png";
+import check from "../design/pendev/assets/image-import-27.png";
+import checkLight from "../design/pendev/assets/image-import-41.png";
+import impactMark from "../design/pendev/assets/image-import-64.png";
+import mentorAlice from "../design/pendev/assets/image-import-53.png";
+import mentorHeitor from "../design/pendev/assets/image-import-57.png";
+import mentorTiago from "../design/pendev/assets/image-import-52.png";
+import mentorBruna from "../design/pendev/assets/image-import-40.png";
+import mentorCamila from "../design/pendev/assets/image-import-59.png";
+import muralAvatar from "../design/pendev/assets/image-import-55.png";
+import muralSmallAvatar from "../design/pendev/assets/image-import-66.png";
 
 export const assets = {
   mascot,
+  mascotCropped,
   logo,
   coins,
-  badge,
-  patron,
-  server,
-  tools,
-  globe,
+  topCardLogo,
+  topCardAvatar,
   support,
-  avatar,
-  ana,
-  bruno,
-  carla,
-  pencil,
-  hands,
-  coin
+  grid,
+  storiesBackground,
+  footerBackground,
+  footerArt,
+  server,
+  collaboration,
+  valueTools,
+  platform,
+  communication,
+  reserve,
+  check,
+  checkLight,
+  impactMark,
+  mentorAlice,
+  mentorHeitor,
+  mentorTiago,
+  mentorBruna,
+  mentorCamila,
+  muralAvatar,
+  muralSmallAvatar,
 };

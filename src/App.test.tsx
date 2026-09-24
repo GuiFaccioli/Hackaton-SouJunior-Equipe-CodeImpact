@@ -4,14 +4,38 @@ import userEvent from "@testing-library/user-event";
 import App from "./App";
 
 describe("Landing page", () => {
-  it("labels the hero supporter card as an illustrative preview", () => {
+  it("keeps the hero artwork in separate layers with a clipped mascot", () => {
     const { container } = render(<App />);
-    const heroPreview = container.querySelector(".hero .floating-member");
+    const art = container.querySelector(".hero-art");
 
-    expect(heroPreview).not.toBeNull();
-    expect(heroPreview?.textContent).toContain("Exemplo de apoiador");
-    expect(heroPreview?.textContent).toContain("Prévia ilustrativa");
-    expect(heroPreview?.textContent).not.toContain("Rafael Miranda");
+    expect(art?.querySelector(".hero-art-background")).not.toBeNull();
+    expect(art?.querySelector(".hero-mascot-clip")).not.toBeNull();
+    expect(art?.querySelectorAll(".hero-mascot")).toHaveLength(1);
+    expect(art?.querySelector(".hero-coins")).not.toBeNull();
+    expect(art?.querySelector(".floating-member")).not.toBeNull();
+    expect(art?.querySelector(".floating-support")).not.toBeNull();
+  });
+
+  it("keeps the supporter card artwork layered with one mascot and independent coins", () => {
+    const { container } = render(<App />);
+    const preview = container.querySelector(".card-preview");
+
+    expect(preview?.querySelector(".preview-artwork-background")).not.toBeNull();
+    expect(preview?.querySelectorAll(".preview-mascot")).toHaveLength(1);
+    expect(preview?.querySelectorAll(".preview-coins")).toHaveLength(1);
+  });
+
+  it("uses the official sXL38 copy and section content", () => {
+    const { container } = render(<App />);
+    expect(container.querySelector('[data-frame-id="sXL38"]')).not.toBeNull();
+    expect(screen.getByText("Doe e concorra a mentorias individuais com quem já trilhou esse caminho.")).toBeTruthy();
+    expect(screen.getByText("Ferramentas de colaboração")).toBeTruthy();
+    expect(screen.getByText("Reserva operacional")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /Concorra a.*mentorias individuais/i })).toBeTruthy();
+    expect(screen.getByText("Alice Soares")).toBeTruthy();
+    expect(screen.getByText("Top apoiadores")).toBeTruthy();
+    expect(screen.getByText("Comprovante de pagamento")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /Faça parte.*da SouJunior/i })).toBeTruthy();
   });
 
   it("waits for the selected photo before allowing card generation", async () => {

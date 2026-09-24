@@ -17,40 +17,45 @@ it("keeps section backgrounds square and restores component corner radii", async
     expect(cssText.length).toBeGreaterThan(0);
     expect(style.sheet?.cssRules.length).toBeGreaterThan(0);
     expect(cssText).toMatch(
+      /\.hero-mascot\s*\{[^}]*object-fit:\s*contain;/s,
+    );
+    expect(cssText).toMatch(
+      /\.preview-mascot\s*\{[^}]*object-fit:\s*contain;/s,
+    );
+    expect(cssText).not.toMatch(
+      /\.hero-mascot\s*\{[^}]*object-fit:\s*fill;/s,
+    );
+    expect(cssText).not.toMatch(
+      /\.preview-mascot\s*\{[^}]*object-fit:\s*fill;/s,
+    );
+    expect(cssText).toMatch(
       /\.card-form input::file-selector-button\s*\{[^}]*border-radius:\s*5px;/s,
     );
     const expectedRadii = new Map([
-      [".hero", 0],
-      [".pale-section", 0],
       [".button", 999],
       [".menu-toggle", 8],
-      [".floating-member", 20],
-      [".floating-support", 16],
+      [".floating-member", 12],
+      [".floating-support", 12],
       [".eyebrow", 999],
-      [".member-top > span", 8],
-      [".value-card", 20],
-      [".expense-card", 24],
-      [".metric", 20],
-      [".testimonial", 0],
-      [".testimonial > small", 99],
+      [".member-top > span", 0],
+      [".value-card", 16],
+      [".expense-card", 16],
+      [".metric", 16],
       [".plan", 32],
-      [".plan-badge", 5],
-      [".card-form", 24],
-      [".card-form input", 10],
-      [".card-preview", 24],
-      [".preview-empty", 0],
-      [".supporter-row", 12],
-      [".supporter-badge", 99],
-      [".footer-panel", 48],
+      [".card-form", 0],
+      [".card-preview", 16],
+      [".supporter-row", 0],
+      [".footer-inner", 24],
     ]);
     for (const [selector, expectedRadius] of expectedRadii) {
       const element = container.querySelector(selector);
       expect(element, selector).not.toBeNull();
-      // jsdom may return an empty string for the initial border-radius (0).
-      const radius = getComputedStyle(element as Element).borderRadius || "0px";
+      const radius = getComputedStyle(element as Element).borderRadius;
       const corners = radius.split(/\s+/).map((value) => Number.parseFloat(value));
-      expect(corners, `${selector}: ${radius}`).toEqual(corners.map(() => expectedRadius));
+      expect(corners.every((corner) => corner === expectedRadius), selector).toBe(true);
     }
+    expect(getComputedStyle(container.querySelector(".hero") as Element).borderRadius).toBe("0 0 40px 40px");
+    expect(getComputedStyle(container.querySelector(".pale-stage") as Element).borderRadius).toBe("32px 32px 0 0");
   } finally {
     style.remove();
   }
