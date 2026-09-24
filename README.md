@@ -1,53 +1,63 @@
-# SouJunior × CodeImpact
+﻿# SouJunior — Landing Page CodeImpact
 
-Protótipo funcional de uma Landing Page para apresentar a causa da SouJunior e levar visitantes ao apoio recorrente no Apoia.se. A Landing Page é o produto principal; o mural de apoiadores é uma camada de reconhecimento e prova social.
+Landing page da equipe CodeImpact para apresentar a causa da SouJunior, mostrar impacto e gastos informados pelo projeto e encaminhar visitantes à [campanha oficial no Apoia.se](https://apoia.se/soujunior). O problema é tornar o apoio recorrente compreensível e confiável para quem ainda não conhece a comunidade. A solução organiza a jornada em causa, transparência, impacto, relatos, formas de apoiar e reconhecimento da comunidade.
 
-## Executar localmente
+O diferencial previsto pela equipe é o reconhecimento de apoiadores. Nesta versão, o mural mostra perfis **ilustrativos** e o visitante pode gerar um card local para compartilhar. O card não comprova doação e não cadastra ninguém no mural.
 
-Requisitos: Node.js 20.19 ou mais recente da linha 20, ou 22.12 ou mais recente da linha 22.
+## Executar e verificar
 
-    npm ci
-    npm run dev
+Requer Node.js e npm compatíveis com o projeto. Na raiz do repositório:
 
-O Vite informa no terminal o endereço local da aplicação.
+```sh
+npm ci
+npm run dev
+```
 
-## Comandos disponíveis
+O Vite informa o endereço local. Os comandos disponíveis são:
 
-| Comando | Uso |
-| --- | --- |
-| npm run dev | Inicia o servidor local do Vite. |
-| npm run typecheck | Verifica os tipos TypeScript. |
-| npm test | Executa os testes com Vitest. |
-| npm run build | Gera a versão de produção. |
+```sh
+npm test
+npm run typecheck
+npm run build
+```
 
-## O que a página apresenta
+`npm test` executa Vitest; `npm run typecheck` executa `tsc --noEmit`; `npm run build` executa `tsc -b && vite build` e gera `dist/`. Como o tsconfig raiz usa referências, o build faz a checagem TypeScript dos projetos referenciados. Há sete testes de fluxo em `src/App.test.tsx` e um arquivo de teste das superfícies em `src/styles.test.ts`.
 
-- Hero com a causa e CTA para o Apoia.se.
-- Explicação da causa, depoimentos e indicadores de impacto.
-- Transparência dos gastos de infraestrutura informados.
-- Mural demonstrativo de apoiadores.
-- Orientações de como apoiar e gerador local de card para compartilhamento.
-- Links para os canais oficiais da SouJunior.
+## Stack e decisões técnicas
 
-O conteúdo e alguns elementos visuais ainda estão marcados como provisórios no produto. O mural usa apoiadores demonstrativos; não publique esses registros como pessoas reais. Confirme os indicadores que variam e aprove depoimentos antes da submissão.
+React 19, TypeScript 7, Vite 8, CSS e Vitest. Os PNGs do design são importados pelo Vite; as fontes Funnel Sans e Funnel Display são carregadas do Google Fonts. A página é estática e não tem backend, banco de dados, pagamento próprio ou integração automática com o Apoia.se. Os CTAs abrem a campanha oficial em outra aba. Os valores R$ 2, R$ 15 e R$ 50 são sugestões; condições e benefícios devem ser conferidos na campanha.
 
-## Documentação
+O card é criado no navegador com nome, site opcional e foto opcional JPG, PNG ou WebP de até 5 MB. A prévia e o download PNG são locais, sem envio desses dados a servidor. O mural permanece ilustrativo e a inclusão de apoiadores reais exige validação manual.
 
-- [Guia do projeto e mapa do código](docs/PROJECT_DOCUMENTATION.md)
-- [Contexto e regras do hackathon](docs/hackathon/README.md)
-- [Depoimentos fornecidos](docs/Depoimentos/depoimentos.md)
-- [Dados de gastos de 2026](docs/Gastos/gastos_2026.csv)
-- Mapa visual: quadro “Documentação · Mapa do produto e do código” no canvas pendev.pen ativo no pen.dev. Esse arquivo está fora deste worktree; pen.dev/Ui-Kit contém os ativos versionados aqui.
+## Conteúdo e fontes
 
-## Estrutura principal
+As métricas exibidas seguem o [briefing do produto](docs/hackathon/product-brief.md): 35 mentores ativos, mais de 50 pessoas empregadas por meio da SouJunior, 3 projetos em desenvolvimento, 120 membros e 108 apoiadores. **Reconfirmar os 120 membros antes de publicar.** O número de apoiadores pode variar; registrar uma data de referência quando ela estiver disponível. Não há métrica oficial de pessoas impactadas.
 
-    src/components/   Seções da Landing Page e componentes de interação
-    src/data/         Texto, indicadores, despesas e apoiadores demonstrativos
-    src/lib/          Geração e compartilhamento local do card
-    src/styles/       Estilos globais, UI Kit e direção visual
-    docs/hackathon/   Briefing, regras, decisões e critérios do evento
-    pen.dev/Ui-Kit/   Ativos visuais usados pelo projeto
+Os gastos apresentados somam **R$ 1.849,59 até setembro de 2026**, conforme o [CSV original](docs/Gastos/gastos_2026.csv). Os relatos da página são trechos dos [depoimentos fornecidos](docs/Depoimentos/depoimentos.md).
 
-## Licença
+## Estrutura
 
-Este repositório usa a licença MIT. Consulte o arquivo LICENSE.
+| Caminho | Uso |
+|---|---|
+| `src/App.tsx` | Seções, conteúdo, navegação, depoimentos, mural e CTAs |
+| `src/SupporterCard.tsx` | Formulário, prévia e download local do card |
+| `src/assets.ts`, `src/styles.css` | Imports de imagens e estilos responsivos |
+| `pendev.pen`, `pendev-assets/` | Fonte editável do Pencil e imagens originais |
+| `docs/design/` | Inventário, manifesto e prévias do design |
+| `docs/hackathon/` | Requisitos e decisões da equipe |
+| `docs/Gastos/`, `docs/Depoimentos/` | Fontes de conteúdo retidas |
+
+O frame Desktop `EAVtG` do Pencil orienta o visual. As [prévias do Pencil](docs/design/previews/EAVtG.png) são **referências de design**, não screenshots do site em execução. O recorte do corpo e a sobreposição do cabelo do mascote ainda diferem na implementação web. Consulte o [inventário visual](docs/design/DESIGN_REFERENCE.md) e a [documentação do projeto](docs/PROJECT_DOCUMENTATION.md).
+
+## Acessibilidade e limites
+
+A página oferece navegação por teclado, foco visível, link para pular ao conteúdo, menu móvel com nome acessível, labels no formulário, mensagens de erro e respeito à preferência de movimento reduzido. Não há auditoria WCAG completa registrada. Os PNGs originais ainda são grandes e precisam de revisão antes de publicação em produção.
+
+Para a submissão, ainda faltam **screenshot ou vídeo do site em execução** e **lista nominal de integrantes com suas responsabilidades**. As prévias do Pencil não substituem essa evidência. Consulte os [requisitos de submissão](docs/hackathon/submission.md).
+
+## Documentação e licença
+
+- [Manutenção](docs/MAINTENANCE.md)
+- [Histórico](docs/CHANGELOG.md)
+- [Plano de integração das worktrees](docs/superpowers/plans/2026-09-23-integrate-soujunior-worktrees.md)
+- [Licença MIT](LICENSE)
