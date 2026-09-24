@@ -69,7 +69,7 @@ O frame externo mede **1920 × 6340**. Seu container vertical `F1TIs` mede **192
 
 ![Hero no Pencil](previews/G8k5su.png)
 
-`G8k5su`: 1920 × 1123, layout absoluto, `clip: true`. Nesta captura, o nó não declara `cornerRadius`; o CSS web ainda usa cantos arredondados. A ordem abaixo é a ordem real de pintura dos filhos.
+`G8k5su`: 1920 × 1123, layout absoluto, `clip: true`. Nesta captura, o nó não declara `cornerRadius`; os backgrounds `.hero` e `.pale-section` têm cantos quadrados; os componentes preservam seus raios originais. A ordem abaixo é a ordem real de pintura dos filhos.
 
 | Ordem | ID | Camada | X local | Y local | Largura local/resolvida | Altura local/resolvida |
 |---:|---|---|---:|---:|---:|---:|

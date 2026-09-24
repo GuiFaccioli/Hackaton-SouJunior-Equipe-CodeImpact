@@ -1586,3 +1586,8 @@ blockquote {
     transform: none;
   }
 }
+
+.hero,
+.pale-section {
+  border-radius: 0;
+}
