@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logoUrl from '../../docs/Ui-Kit/Group 1410103555.svg'
+import logoUrl from '../../pen.dev/Ui-Kit/Group 1410103555.svg'
 import { landingContent, navigationItems, officialLinks } from '../data/landing'
 
 export function Header() {
