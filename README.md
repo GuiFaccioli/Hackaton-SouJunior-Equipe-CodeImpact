@@ -21,7 +21,7 @@ npm run typecheck
 npm run build
 ```
 
-`npm test` executa Vitest; `npm run typecheck` executa `tsc --noEmit`; `npm run build` executa `tsc -b && vite build` e gera `dist/`. Como o tsconfig raiz usa referências, o build faz a checagem TypeScript dos projetos referenciados. Há sete testes de fluxo em `src/App.test.tsx` e um arquivo de teste das superfícies em `src/styles.test.ts`.
+`npm test` executa Vitest; `npm run typecheck` executa `tsc --noEmit`; `npm run build` executa `tsc -b && vite build` e gera `dist/`. Como o tsconfig raiz usa referências, o build faz a checagem TypeScript dos projetos referenciados. Há oito testes de fluxo em `src/App.test.tsx` e um arquivo de teste das superfícies em `src/styles.test.ts`.
 
 ## Stack e decisões técnicas
 

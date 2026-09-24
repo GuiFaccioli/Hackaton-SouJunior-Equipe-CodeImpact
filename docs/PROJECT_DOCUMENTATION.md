@@ -69,7 +69,7 @@ Não há variável de ambiente necessária, segredo, API própria, configuraçã
 | `src/SupporterCard.tsx` | Formulário, leitura de foto, estado de prévia e exportação Canvas |
 | `src/assets.ts` | Imports das imagens usadas pelos componentes |
 | `src/styles.css` | Estilos, hero, seções, breakpoints e estados acessíveis |
-| `src/App.test.tsx` | Sete testes dos fluxos principais |
+| `src/App.test.tsx` | Oito testes da página, incluindo ressalvas das métricas |
 | `src/styles.test.ts` | Regressão de cantos quadrados nas superfícies |
 | `src/test/setup.ts` | Cleanup do DOM após cada teste |
 | `src/vite-env.d.ts` | Tipos do cliente Vite e imports de assets |
@@ -198,7 +198,7 @@ O valor R$ 700/mês do canvas é ilustrativo, não o dado financeiro adotado. As
 
 ## Validação e limites conhecidos
 
-Sete testes em `src/App.test.tsx` cobrem o rótulo de apoiador ilustrativo, espera da leitura da foto, limite do upload, destinos dos CTAs/âncoras, menu mobile, geração sem cadastro no mural e rejeição de nome em branco. Não são testes de comparação visual ou download Canvas em navegador real.
+Oito testes em `src/App.test.tsx` cobrem o rótulo de apoiador ilustrativo, espera da leitura da foto, limite do upload, destinos dos CTAs/âncoras, menu mobile, geração sem cadastro no mural, rejeição de nome em branco e ressalvas de confirmação dos membros e de variação dos apoiadores. Não são testes de comparação visual ou download Canvas em navegador real.
 
 A documentação anterior registra verificações manuais no Chromium em 320, 390, 768, 1440, 1920, 2560 e 3840 px, incluindo overflow horizontal, menu, foto e download PNG. Essas verificações não foram repetidas nesta integração e não equivalem a cobertura automática de todos os navegadores.
 
