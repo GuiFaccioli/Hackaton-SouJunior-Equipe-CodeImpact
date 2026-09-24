@@ -8,6 +8,7 @@ export default function SupporterCard() {
   const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
   const [photo, setPhoto] = useState("");
+  const [proofName, setProofName] = useState("");
   const [card, setCard] = useState<Card | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -67,6 +68,22 @@ export default function SupporterCard() {
     }
     setError("");
     setCard({ name: name.trim(), website: website.trim(), photo });
+  }
+
+  function selectProof(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) {
+      setProofName("");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setError("Escolha um comprovante de até 5 MB.");
+      event.target.value = "";
+      setProofName("");
+      return;
+    }
+    setError("");
+    setProofName(file.name);
   }
 
   async function download() {
@@ -176,8 +193,27 @@ export default function SupporterCard() {
           placeholder="linkedin.com/in/voce"
           autoComplete="url"
         />
-        <label htmlFor="supporter-photo">Foto (opcional)</label>
+        <label htmlFor="supporter-proof">Comprovante de pagamento</label>
+        <label className="upload-control" htmlFor="supporter-proof">
+          <span className="upload-icon" aria-hidden="true">↥</span>
+          <span>{proofName || "Adicionar comprovante"}</span>
+        </label>
         <input
+          className="upload-input"
+          id="supporter-proof"
+          type="file"
+          accept="image/png,image/jpeg,image/webp,application/pdf"
+          onChange={selectProof}
+          aria-describedby="proof-help"
+        />
+        <small id="proof-help">{proofName ? "Comprovante selecionado" : ""}</small>
+        <label htmlFor="supporter-photo">Foto (opcional)</label>
+        <label className="upload-control" htmlFor="supporter-photo">
+          <span className="upload-icon" aria-hidden="true">↥</span>
+          <span>{photo ? "Foto adicionada" : "Adicionar foto"}</span>
+        </label>
+        <input
+          className="upload-input"
           id="supporter-photo"
           type="file"
           accept="image/png,image/jpeg,image/webp"
@@ -213,37 +249,31 @@ export default function SupporterCard() {
         )}
       </form>
       <div
-        className={`card-preview ${card ? "has-card" : ""}`}
+        className="card-preview"
         aria-label="Prévia do card"
         aria-live="polite"
       >
-        {card ? (
-          <>
-            <strong className="preview-brand">SouJunior</strong>
-            <span className="preview-kicker">EU APOIO QUEM ESTÁ COMEÇANDO</span>
-            <div className="preview-person">
-              <div>
-                <h3>{card.name}</h3>
-                <p>Juntos, abrimos portas para novos talentos.</p>
-                <small>{card.website}</small>
-              </div>
-              {card.photo ? (
-                <img src={card.photo} alt={`Foto de ${card.name}`} />
-              ) : (
-                <span className="preview-initial">
-                  {card.name.slice(0, 1).toUpperCase()}
-                </span>
-              )}
-            </div>
-            <span className="preview-url">apoia.se/soujunior</span>
-          </>
-        ) : (
-          <div className="preview-empty">
-            <img src={assets.badge} alt="" />
-            <strong>Seu apoio merece ser compartilhado.</strong>
-            <span>Preencha seus dados para criar seu card.</span>
+        <div className={`preview-card ${card ? "has-card" : ""}`}>
+          <div className="preview-card-top">
+            <img className="preview-logo" src={assets.logo} alt="" />
+            <span className="preview-badge">Mantenedor</span>
           </div>
-        )}
+          <div className="preview-artwork" aria-hidden="true">
+            <div className="preview-artwork-background" />
+            <div className="preview-mascot-clip">
+              <img className="preview-mascot" src={assets.mascotCropped} alt="" />
+            </div>
+            <img className="preview-coins" src={assets.coins} alt="" />
+          </div>
+          <div className="preview-card-copy">
+            <h3>{card?.name || "Nome Completo"}</h3>
+            <p>
+              Eu apoio quem está
+              <br />
+              começando em tech <span aria-hidden="true">💙</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
