@@ -111,7 +111,7 @@ O h1 `bi0qE` usa Funnel Display 88/700; títulos principais usam Funnel Display 
 
 - O canvas mantém textos provisórios, inclusive lorem ipsum e a prévia “Card aqui a Definir Layout”.
 - A transparência visual mostra R$ 700/mês e categorias ilustrativas. A web mostra os gastos fornecidos pelo projeto, R$ 1.849,59 acumulados até setembro/2026.
-- O canvas associa números a rótulos divergentes do briefing. A web usa 35 mentores, +50 pessoas empregadas, 3 projetos, 120 membros e 108 apoiadores.
+- O canvas associa números a rótulos divergentes do briefing. A web usa 35 mentores, +50 pessoas empregadas, 3 projetos, 120 membros (número pendente de confirmação) e 108 apoiadores (número pode variar).
 - A web usa depoimentos fornecidos pelo projeto, não a frase repetida do canvas.
 - A web tem uma única imagem `.hero-mascot`, sem equivalentes de `EiMyw`/`D7Mx2W`. A implementação do recorte e do cabelo ainda está pendente.
 - Os benefícios dos planos e os ícones/canais do rodapé não são uma transcrição literal do canvas; a web remete às condições oficiais e usa links já fornecidos no projeto.
