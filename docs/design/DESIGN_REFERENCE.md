@@ -1,6 +1,8 @@
 # Referência do design — MCP Pencil
 
-Captura de 23/09/2026 de `pendev.pen`, obtida com `get_app_state`, `execute/Get`, `GetVariables` e `Export`. O arquivo `.pen` não foi lido como texto pelo filesystem.
+Captura de 23/09/2026 de `design/pendev.pen`, obtida com `get_app_state`, `execute/Get`, `GetVariables` e `Export`. O arquivo `.pen` não foi lido como texto pelo filesystem.
+
+Os caminhos das imagens na captura são relativos ao documento em `design/`; o manifesto usa caminhos relativos à raiz do repositório. A reorganização preserva os bytes do `.pen` e dos PNGs.
 
 ## Cobertura e limites
 
@@ -67,7 +69,7 @@ O frame externo mede **1920 × 6340**. Seu container vertical `F1TIs` mede **192
 
 ![Hero no Pencil](previews/G8k5su.png)
 
-`G8k5su`: 1920 × 1123, layout absoluto, `clip: true`. Nesta captura, o nó não declara `cornerRadius`; o hero web atual tem cantos quadrados. A ordem abaixo é a ordem real de pintura dos filhos.
+`G8k5su`: 1920 × 1123, layout absoluto, `clip: true`. Nesta captura, o nó não declara `cornerRadius`; os backgrounds `.hero` e `.pale-section` têm cantos quadrados; os componentes preservam seus raios originais. A ordem abaixo é a ordem real de pintura dos filhos.
 
 | Ordem | ID | Camada | X local | Y local | Largura local/resolvida | Altura local/resolvida |
 |---:|---|---|---:|---:|---:|---:|

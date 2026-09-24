@@ -1,14 +1,14 @@
-﻿# Documentação oficial do projeto — SouJunior / CodeImpact
+# Documentação oficial do projeto — SouJunior / CodeImpact
 
 Referência consolidada em **23/09/2026**. Este documento registra a estrutura visual escolhida, as decisões do hero, a implementação existente e as restrições do projeto. A documentação distingue o que existe no Pencil, o que existe no código e o que ainda está pendente.
 
 ## Leitura obrigatória e fontes
 
-Antes de alterar o projeto, ler `AGENTS.md`, `README.md`, este documento e o frame **Desktop** de `pendev.pen` pelo MCP Pencil.
+Antes de alterar o projeto, ler `AGENTS.md`, `README.md`, este documento e o frame **Desktop** de `design/pendev.pen` pelo MCP Pencil.
 
 | Assunto | Fonte |
 |---|---|
-| Visual editável | `pendev.pen` + `pendev-assets/`, frame `EAVtG` |
+| Visual editável | `design/pendev.pen` + `design/pendev-assets/`, frame `EAVtG` |
 | Inventário visual completo | [Referência do design](design/DESIGN_REFERENCE.md) |
 | Propriedades e textos de todos os nós | [Snapshot MCP](design/pencil-snapshot.json) |
 | Imagens e seus nós consumidores | [Referências de assets](design/asset-references.json) |
@@ -19,7 +19,7 @@ Antes de alterar o projeto, ler `AGENTS.md`, `README.md`, este documento e o fra
 
 **Precedência:** requisitos oficiais do hackathon → decisão explícita atual da equipe → ideias futuras. O Desktop é a referência visual escolhida; outros frames no canvas não viram funcionalidades automaticamente. Os arquivos do protótipo anterior foram excluídos intencionalmente pelo usuário. Novos arquivos e componentes devem servir a esta landing page.
 
-O contexto obrigatório está em [hackathon/README.md](hackathon/README.md). As fontes de conteúdo retidas são [gastos de 2026](Gastos/gastos_2026.csv) e [depoimentos](Depoimentos/depoimentos.md).
+O contexto obrigatório está em [hackathon/README.md](hackathon/README.md). As fontes de conteúdo estão em [content/README.md](content/README.md); sua restauração preserva os requisitos e a rastreabilidade dos dados da página.
 
 ## Objetivo e escopo
 
@@ -52,7 +52,7 @@ O Vite imprime o endereço disponível; normalmente `http://localhost:5173/`. O 
 
 Dependências declaradas: React/React DOM `^19.3.0`. Ferramentas: TypeScript `^7.0.2`, Vite `^8.3.0`, plugin React `^6.1.1`, Vitest `^5.0.1`, jsdom `^29.1.1`, Testing Library React `^16.3.3` e user-event `^14.6.7`. As versões exatas resolvidas estão no `package-lock.json`; usar `npm ci` para reproduzi-las.
 
-Não há variável de ambiente necessária, segredo, API própria, configuração de deploy ou workflow de CI no conjunto de arquivos atual. A licença do repositório é [MIT](../LICENSE), com copyright de 2026 de Guilherme Faccioli. Não inferir licenças individuais dos assets apenas pela licença do repositório.
+Não há variável de ambiente necessária, segredo, API própria, configuração de deploy ou workflow de CI no conjunto de arquivos atual. A licença do repositório é MIT, com copyright de 2026 de Guilherme Faccioli. Não inferir licenças individuais dos assets apenas pela licença do repositório.
 
 ## Mapa do repositório
 
@@ -61,16 +61,14 @@ Não há variável de ambiente necessária, segredo, API própria, configuraçã
 | `AGENTS.md` | Regras de escopo, qualidade e decisões |
 | `README.md` | Entrada rápida e links para a documentação |
 | `docs/PROJECT_DOCUMENTATION.md` | Contrato documentado do projeto |
-| `docs/design/` | Captura auditável do Pencil, inventários e prévias de design |
-| `docs/Gastos/`, `docs/Depoimentos/` | Fontes financeiras e relatos originais |
-| `docs/hackathon/` | Requisitos e decisões do evento |
+| `docs/design/` | Captura auditável do Pencil, inventários e prévias |
 | `src/main.tsx` | Monta React em `#root`, com StrictMode e CSS global |
 | `src/App.tsx` | Composição, dados editoriais, menu, seleção de depoimentos, CTAs, mural e rodapé |
 | `src/SupporterCard.tsx` | Formulário, leitura de foto, estado de prévia e exportação Canvas |
 | `src/assets.ts` | Imports das imagens usadas pelos componentes |
 | `src/styles.css` | Estilos, hero, seções, breakpoints e estados acessíveis |
 | `src/App.test.tsx` | Oito testes da página, incluindo ressalvas das métricas |
-| `src/styles.test.ts` | Regressão de cantos quadrados nas superfícies |
+| `src/styles.test.ts` | Regressão dos backgrounds quadrados e raios originais dos componentes |
 | `src/test/setup.ts` | Cleanup do DOM após cada teste |
 | `src/vite-env.d.ts` | Tipos do cliente Vite e imports de assets |
 | `index.html` | Idioma pt-BR, metadados, fontes e entrada React |
@@ -78,8 +76,8 @@ Não há variável de ambiente necessária, segredo, API própria, configuraçã
 | `tsconfig*.json` | Configuração TypeScript de app, ferramentas e referências |
 | `vite.config.ts` | Plugin React |
 | `vitest.config.ts` | Plugin React, ambiente jsdom e setup |
-| `pendev.pen` | Design editável; acessar conteúdo pelo MCP Pencil |
-| `pendev-assets/` | PNGs originais com caminhos relativos estáveis |
+| `design/pendev.pen` | Design editável; acessar conteúdo pelo MCP Pencil |
+| `design/pendev-assets/` | PNGs originais com caminhos relativos estáveis |
 | `.gitignore` | Ignora node_modules, dist, .env/.env.* e .agents |
 | `LICENSE` | Licença do projeto |
 
@@ -89,7 +87,7 @@ A captura pelo MCP contém **836 nós**, **25 elementos de primeiro nível** e *
 
 Há **88 referências a 26 PNGs**, todos presentes no filesystem, somando **23.464.961 bytes**. Uma referência a `image-import-95.png` está desativada. O manifesto registra uso no documento inteiro, uso no Desktop, referências desativadas e imports web.
 
-As 26 imagens são `pendev-assets/image-import-N.png`, com N:
+As 26 imagens são `design/pendev-assets/image-import-N.png`, com N:
 `7, 8, 15, 17, 41, 49, 56, 61, 87, 89, 90, 92, 94, 95, 96, 97, 99, 100, 101, 106, 107, 109, 110, 111, 112, 114`.
 
 O design usa Funnel Sans, Funnel Display e Inter. A web carrega Funnel Sans e Funnel Display, pesos 400–700, via Google Fonts em `index.html`, com fallback sans-serif. Isso é uma dependência de rede em runtime; os PNGs são empacotados localmente pelo Vite.
@@ -108,7 +106,7 @@ O Desktop `EAVtG` mede **1920 × 6340**; seu container `F1TIs` mede **1920 × 63
 | `kNNhp` / section-6 | Apoio e comunidade | `#apoio`, `#comunidade` |
 | `xZ1d6` / footer | CTA final, canais e navegação | `.footer` |
 
-Todos os IDs, textos, dimensões e variantes estão na [referência detalhada](design/DESIGN_REFERENCE.md). As [prévias](design/previews/EAVtG.png) são exportações do Pencil usadas como referência visual; não são screenshots do site em execução.
+Todos os IDs, textos, dimensões e variantes estão na [referência detalhada](design/DESIGN_REFERENCE.md). As prévias são exportações do Pencil, não screenshots da implementação web.
 
 ### Hero: composição obrigatória
 
@@ -148,7 +146,7 @@ O mobile é uma adaptação CSS: não existe um frame mobile confirmado como ref
 
 Âncoras: `#inicio`, `#conteudo`, `#causa`, `#impacto`, `#apoio`, `#comunidade`. `menuOpen` controla o menu mobile. Selecionar uma seção fecha o menu; Escape dentro da navegação também o fecha.
 
-Os CTAs de contribuição abrem `https://apoia.se/soujunior` em nova aba com `rel="noreferrer"`. Não pré-selecionam valor via API e não processam pagamento. R$ 2, R$ 15 e R$ 50 são sugestões; condições e benefícios pertencem à campanha oficial.
+Todos os CTAs de contribuição abrem `https://apoia.se/soujunior` em nova aba com `rel="noreferrer"`. Não pré-selecionam valor via API e não processam pagamento. R$ 2, R$ 15 e R$ 50 são sugestões; condições e benefícios pertencem à campanha oficial.
 
 Canais usados: [Apoia.se](https://apoia.se/soujunior), [Discord](https://discord.gg/FkBcf3vdQZ), [GitHub](https://github.com/SouJunior) e [WhatsApp de avisos](https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W). São links fornecidos pelo projeto; esta auditoria não realizou verificação externa de disponibilidade.
 
@@ -176,15 +174,15 @@ Ana Costa, Bruno Lima e Carla Souza são exemplos do design e estão identificad
 
 ## Conteúdo e proveniência
 
-Os dados seguem o material fornecido pela SouJunior. Fontes retidas: [briefing](hackathon/product-brief.md), [gastos](Gastos/gastos_2026.csv) e [depoimentos](Depoimentos/depoimentos.md).
+Os dados foram adotados do material do projeto, consultado no histórico Git. Fontes atuais: [briefing](hackathon/product-brief.md), [gastos](content/expenses-2026.csv) e [depoimentos](content/testimonials.md). Fonte histórica: commit `f13acf0`, arquivos `docs/hackathon/product-brief.md`, `docs/Gastos/gastos_2026.csv` e `docs/Depoimentos/depoimentos.md`.
 
 | Métrica exibida | Valor | Limite |
 |---|---:|---|
-| Mentores ativos | 35 | Número informado no briefing |
+| Mentores ativos | 35 | Fotografia fornecida pelo projeto |
 | Pessoas empregadas | +50 | Por meio da SouJunior |
 | Projetos em desenvolvimento | 3 | Não confundir com mentores |
-| Membros | 120 | Reconfirmar antes de publicação |
-| Apoiadores | 108 | Pode variar; registrar data de referência quando disponível |
+| Membros | 120 | Atualização necessária antes de publicação |
+| Apoiadores | 108 | Não é contador em tempo real |
 
 | Serviço | Acumulado até setembro/2026 |
 |---|---:|
@@ -200,25 +198,25 @@ O valor R$ 700/mês do canvas é ilustrativo, não o dado financeiro adotado. As
 
 Oito testes em `src/App.test.tsx` cobrem o rótulo de apoiador ilustrativo, espera da leitura da foto, limite do upload, destinos dos CTAs/âncoras, menu mobile, geração sem cadastro no mural, rejeição de nome em branco e ressalvas de confirmação dos membros e de variação dos apoiadores. Não são testes de comparação visual ou download Canvas em navegador real.
 
-A documentação anterior registra verificações manuais no Chromium em 320, 390, 768, 1440, 1920, 2560 e 3840 px, incluindo overflow horizontal, menu, foto e download PNG. Essas verificações não foram repetidas nesta integração e não equivalem a cobertura automática de todos os navegadores.
+A documentação anterior registra verificações manuais no Chromium em 320, 390, 768, 1440, 1920, 2560 e 3840 px, ausência de overflow horizontal, menu, foto válida/inválida e download PNG. Essas verificações não foram repetidas nesta consolidação e não equivalem a cobertura automática de todos os navegadores.
 
 Acessibilidade implementada: semântica de seções/títulos, labels, foco visível, link de pulo, nome acessível do menu, anúncio de atualização/erro e movimento reduzido. Não foi realizada certificação WCAG nem auditoria completa com leitor de tela.
 
 Pendências confirmadas:
 
 - Sincronizar o recorte do corpo e a sobreposição do cabelo do Pencil com o React.
-- As superfícies da web usam cantos quadrados; retratos circulares são preservados. O teste `src/styles.test.ts` verifica essa regra em jsdom, sem substituir a verificação visual responsiva.
+- Somente os backgrounds `.hero` e `.pale-section` usam cantos quadrados; componentes e retratos preservam seus formatos originais. O teste `src/styles.test.ts` verifica essa regra em jsdom, sem substituir a verificação visual responsiva.
 - Otimizar os PNGs originais grandes; preservar originais/caminhos até definir uma mudança explícita.
 - Revalidar dados de membros/apoiadores antes de publicação.
 - Considerar a limitação do script `typecheck`: o build de referências é a verificação TypeScript efetiva atual.
 - Rever a diferença de 32 px na altura do Desktop antes de exportações finais.
 - Confirmar conteúdo real do mural e destino dos links antes de produção.
-- Produzir screenshot ou vídeo do site em execução e registrar a lista nominal de integrantes e responsabilidades para a submissão; as prévias do Pencil não são essa evidência.
+- Produzir screenshot ou vídeo do site em execução e registrar integrantes e responsabilidades para a submissão; as prévias do Pencil não substituem essa evidência.
 
 ## Versionamento e manutenção
 
 Versionar fonte, lockfile, design, assets necessários e documentação juntos quando uma mudança os afetar. Não versionar `node_modules/`, `dist/`, `.env*` ou arquivos temporários de validação.
 
-A integração das worktrees está registrada no [plano de integração](superpowers/plans/2026-09-23-integrate-soujunior-worktrees.md).
+A integração preserva os commits das branches de origem e separa a adaptação visual da organização documental. Consulte [integration/README.md](integration/README.md) para decisões e procedência.
 
 Toda alteração futura deve atualizar a documentação correspondente, explicar o motivo e executar `npm test`, `npm run typecheck` e `npm run build`. Usar commits pequenos e descritivos, sem incluir alterações alheias. O procedimento completo está em [MAINTENANCE.md](MAINTENANCE.md).

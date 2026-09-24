@@ -1,4 +1,4 @@
-﻿# SouJunior — Landing Page CodeImpact
+# SouJunior — Landing Page CodeImpact
 
 Landing page da equipe CodeImpact para apresentar a causa da SouJunior, mostrar impacto e gastos informados pelo projeto e encaminhar visitantes à [campanha oficial no Apoia.se](https://apoia.se/soujunior). O problema é tornar o apoio recorrente compreensível e confiável para quem ainda não conhece a comunidade. A solução organiza a jornada em causa, transparência, impacto, relatos, formas de apoiar e reconhecimento da comunidade.
 
@@ -33,7 +33,7 @@ O card é criado no navegador com nome, site opcional e foto opcional JPG, PNG o
 
 As métricas exibidas seguem o [briefing do produto](docs/hackathon/product-brief.md): 35 mentores ativos, mais de 50 pessoas empregadas por meio da SouJunior, 3 projetos em desenvolvimento, 120 membros e 108 apoiadores. **Reconfirmar os 120 membros antes de publicar.** O número de apoiadores pode variar; registrar uma data de referência quando ela estiver disponível. Não há métrica oficial de pessoas impactadas.
 
-Os gastos apresentados somam **R$ 1.849,59 até setembro de 2026**, conforme o [CSV original](docs/Gastos/gastos_2026.csv). Os relatos da página são trechos dos [depoimentos fornecidos](docs/Depoimentos/depoimentos.md).
+Os gastos apresentados somam **R$ 1.849,59 até setembro de 2026**, conforme o [CSV original](docs/content/expenses-2026.csv). Os relatos da página são trechos dos [depoimentos fornecidos](docs/content/testimonials.md).
 
 ## Estrutura
 
@@ -42,10 +42,10 @@ Os gastos apresentados somam **R$ 1.849,59 até setembro de 2026**, conforme o [
 | `src/App.tsx` | Seções, conteúdo, navegação, depoimentos, mural e CTAs |
 | `src/SupporterCard.tsx` | Formulário, prévia e download local do card |
 | `src/assets.ts`, `src/styles.css` | Imports de imagens e estilos responsivos |
-| `pendev.pen`, `pendev-assets/` | Fonte editável do Pencil e imagens originais |
+| `design/pendev.pen`, `design/pendev-assets/` | Fonte editável do Pencil e imagens originais |
 | `docs/design/` | Inventário, manifesto e prévias do design |
 | `docs/hackathon/` | Requisitos e decisões da equipe |
-| `docs/Gastos/`, `docs/Depoimentos/` | Fontes de conteúdo retidas |
+| `docs/content/` | Fontes de conteúdo retidas |
 
 O frame Desktop `EAVtG` do Pencil orienta o visual. As [prévias do Pencil](docs/design/previews/EAVtG.png) são **referências de design**, não screenshots do site em execução. O recorte do corpo e a sobreposição do cabelo do mascote ainda diferem na implementação web. Consulte o [inventário visual](docs/design/DESIGN_REFERENCE.md) e a [documentação do projeto](docs/PROJECT_DOCUMENTATION.md).
 
@@ -57,6 +57,8 @@ Para a submissão, ainda faltam **screenshot ou vídeo do site em execução** e
 
 ## Documentação e licença
 
+- [Fontes de conteúdo](docs/content/README.md)
+- [Procedência da consolidação](docs/integration/README.md)
 - [Manutenção](docs/MAINTENANCE.md)
 - [Histórico](docs/CHANGELOG.md)
 - [Plano de integração das worktrees](docs/superpowers/plans/2026-09-23-integrate-soujunior-worktrees.md)

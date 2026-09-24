@@ -4,7 +4,7 @@
   "totalBytes": 23464961,
   "assets": [
     {
-      "path": "pendev-assets/image-import-7.png",
+      "path": "design/pendev-assets/image-import-7.png",
       "exists": true,
       "bytes": 1229646,
       "width": 941,
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-8.png",
+      "path": "design/pendev-assets/image-import-8.png",
       "exists": true,
       "bytes": 173167,
       "width": 1672,
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-15.png",
+      "path": "design/pendev-assets/image-import-15.png",
       "exists": true,
       "bytes": 827529,
       "width": 1672,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-17.png",
+      "path": "design/pendev-assets/image-import-17.png",
       "exists": true,
       "bytes": 906624,
       "width": 1672,
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-41.png",
+      "path": "design/pendev-assets/image-import-41.png",
       "exists": true,
       "bytes": 1129130,
       "width": 1672,
@@ -72,7 +72,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-49.png",
+      "path": "design/pendev-assets/image-import-49.png",
       "exists": true,
       "bytes": 606013,
       "width": 941,
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-56.png",
+      "path": "design/pendev-assets/image-import-56.png",
       "exists": true,
       "bytes": 344987,
       "width": 2170,
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-61.png",
+      "path": "design/pendev-assets/image-import-61.png",
       "exists": true,
       "bytes": 848131,
       "width": 1672,
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-87.png",
+      "path": "design/pendev-assets/image-import-87.png",
       "exists": true,
       "bytes": 374491,
       "width": 2191,
@@ -126,7 +126,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-89.png",
+      "path": "design/pendev-assets/image-import-89.png",
       "exists": true,
       "bytes": 1776494,
       "width": 1254,
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-90.png",
+      "path": "design/pendev-assets/image-import-90.png",
       "exists": true,
       "bytes": 732380,
       "width": 921,
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-92.png",
+      "path": "design/pendev-assets/image-import-92.png",
       "exists": true,
       "bytes": 920467,
       "width": 1254,
@@ -166,7 +166,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-94.png",
+      "path": "design/pendev-assets/image-import-94.png",
       "exists": true,
       "bytes": 363722,
       "width": 1254,
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-95.png",
+      "path": "design/pendev-assets/image-import-95.png",
       "exists": true,
       "bytes": 370582,
       "width": 1003,
@@ -192,7 +192,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-96.png",
+      "path": "design/pendev-assets/image-import-96.png",
       "exists": true,
       "bytes": 1799466,
       "width": 1254,
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-97.png",
+      "path": "design/pendev-assets/image-import-97.png",
       "exists": true,
       "bytes": 791531,
       "width": 1254,
@@ -218,7 +218,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-99.png",
+      "path": "design/pendev-assets/image-import-99.png",
       "exists": true,
       "bytes": 673174,
       "width": 921,
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-100.png",
+      "path": "design/pendev-assets/image-import-100.png",
       "exists": true,
       "bytes": 2059186,
       "width": 1254,
@@ -246,7 +246,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-101.png",
+      "path": "design/pendev-assets/image-import-101.png",
       "exists": true,
       "bytes": 541311,
       "width": 921,
@@ -258,7 +258,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-106.png",
+      "path": "design/pendev-assets/image-import-106.png",
       "exists": true,
       "bytes": 2130133,
       "width": 1254,
@@ -270,7 +270,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-107.png",
+      "path": "design/pendev-assets/image-import-107.png",
       "exists": true,
       "bytes": 566752,
       "width": 921,
@@ -284,7 +284,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-109.png",
+      "path": "design/pendev-assets/image-import-109.png",
       "exists": true,
       "bytes": 341743,
       "width": 1254,
@@ -298,7 +298,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-110.png",
+      "path": "design/pendev-assets/image-import-110.png",
       "exists": true,
       "bytes": 2044741,
       "width": 1254,
@@ -312,7 +312,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-111.png",
+      "path": "design/pendev-assets/image-import-111.png",
       "exists": true,
       "bytes": 892997,
       "width": 1159,
@@ -326,7 +326,7 @@
       ]
     },
     {
-      "path": "pendev-assets/image-import-112.png",
+      "path": "design/pendev-assets/image-import-112.png",
       "exists": true,
       "bytes": 460039,
       "width": 921,
@@ -338,7 +338,7 @@
       "webSources": []
     },
     {
-      "path": "pendev-assets/image-import-114.png",
+      "path": "design/pendev-assets/image-import-114.png",
       "exists": true,
       "bytes": 560525,
       "width": 921,

@@ -1,6 +1,6 @@
 {
   "source": {
-    "document": "pendev.pen",
+    "document": "design/pendev.pen",
     "method": "MCP Pencil execute/Get visitor, includePathGeometry=true; GetVariables",
     "primaryFrameId": "EAVtG",
     "capturedOn": "2026-09-23",

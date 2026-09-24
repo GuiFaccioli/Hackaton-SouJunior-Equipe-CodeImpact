@@ -176,14 +176,14 @@ input:focus-visible {
   width: 100%;
   overflow: hidden;
   border-radius: 0 0 64px 64px;
-  background: #1731df url("../pendev-assets/image-import-17.png") center/cover;
+  background: #1731df url("../design/pendev-assets/image-import-17.png") center/cover;
   color: #fff;
 }
 .hero:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../pendev-assets/image-import-8.png") center/cover;
+  background: url("../design/pendev-assets/image-import-8.png") center/cover;
   opacity: 0.7;
   z-index: -1;
 }
@@ -375,7 +375,7 @@ input:focus-visible {
 .pale-section {
   background:
     linear-gradient(#f1f4fd00, #f1f4fd 70%),
-    url("../pendev-assets/image-import-15.png") top center/100% auto,
+    url("../design/pendev-assets/image-import-15.png") top center/100% auto,
     #f5f7ff;
   border-radius: 64px 64px 0 0;
 }
@@ -566,7 +566,7 @@ tfoot td {
   text-align: center;
 }
 .stories {
-  background: #d5dfff url("../pendev-assets/image-import-61.png") center/cover;
+  background: #d5dfff url("../design/pendev-assets/image-import-61.png") center/cover;
   text-align: center;
   padding-block: 80px;
 }
@@ -1587,31 +1587,7 @@ blockquote {
   }
 }
 
-.button,
-.menu-toggle,
 .hero,
-.pale-section,
-.floating-member,
-.floating-support,
-.eyebrow,
-.member-top > span,
-.value-card,
-.expense-card,
-.metric,
-.testimonial,
-.testimonial > small,
-.plan,
-.plan-badge,
-.card-form,
-.card-form input,
-.card-preview,
-.preview-empty,
-.supporter-row,
-.supporter-badge,
-.footer-panel {
-  border-radius: 0;
-}
-
-.card-form input::file-selector-button {
+.pale-section {
   border-radius: 0;
 }
