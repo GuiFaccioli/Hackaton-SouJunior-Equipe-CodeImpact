@@ -2246,13 +2246,14 @@ blockquote {
 .official-page .preview-mascot-clip { width: 110.346%; height: 100.091%; }
 /* Offset compensates for the removed transparent pixels before rotation. */
 .official-page .preview-mascot { left: 21.4104%; top: -23.7881%; width: 81.4242%; height: auto; transform: rotate(23.926deg); transform-origin: top left; }
+.official-page .preview-mascot.preview-user-photo { left: 7%; top: 5%; width: 70%; transform: none; object-fit: cover; }
 .official-page .preview-coins { left: 65.276%; top: 6.396%; width: 45.025%; height: auto; object-fit: contain; transform: rotate(10.7605deg); }
 .official-page .preview-card-copy { width: 100%; margin: 0; padding: 0; text-align: center; }
 .official-page .preview-card-copy h3 { font-size: 7.407cqw; line-height: 1.2; }
 .official-page .preview-card-copy p { margin-top: 3.279cqw; font-size: 4.444cqw; line-height: 1.5; }
 .footer { height: 950px; padding: 80px 0; background: #2e52f2; color: #101f5e; }
 .footer-inner { position: relative; height: 700px; padding: 48px; overflow: hidden; border-radius: 24px; background: #fff url("../design/pendev/assets/image-import-23.png") center / cover; }
-.footer-art { position: absolute; left: 20.64%; top: -110px; width: 712px; height: 712px; object-fit: contain; }
+.footer-art { position: absolute; left: 20.64%; top: -40px; width: 712px; height: 712px; object-fit: contain; }
 .footer .social-links { position: relative; z-index: 2; display: flex; gap: 12px; width: auto; }
 .footer .social-links a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #101f5e; border-radius: 50%; color: #101f5e; }
 .social-glyph { display: block; width: 22px; height: 22px; fill: currentColor; }
