@@ -9,11 +9,14 @@ export default function SupporterCard() {
   const [website, setWebsite] = useState("");
   const [photo, setPhoto] = useState("");
   const [proofName, setProofName] = useState("");
-  const [card, setCard] = useState<Card | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [readingPhoto, setReadingPhoto] = useState(false);
   const photoVersion = useRef(0);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const card: Card | null = name.trim()
+    ? { name: name.trim(), website: website.trim(), photo }
+    : null;
 
   function selectPhoto(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
@@ -67,7 +70,6 @@ export default function SupporterCard() {
       return;
     }
     setError("");
-    setCard({ name: name.trim(), website: website.trim(), photo });
   }
 
   function selectProof(event: ChangeEvent<HTMLInputElement>) {
@@ -92,65 +94,52 @@ export default function SupporterCard() {
     setError("");
     try {
       await document.fonts.ready;
-      const canvas = document.createElement("canvas");
-      canvas.width = 1200;
-      canvas.height = 630;
-      const context = canvas.getContext("2d");
-      if (!context) throw new Error("Canvas indisponível");
-      context.fillStyle = "#2e52f2";
-      context.fillRect(0, 0, 1200, 630);
-      context.fillStyle = "#ffffff";
-      context.font = '700 32px "Funnel Sans", sans-serif';
-      context.fillText("SouJunior", 64, 78);
-      context.font = '500 22px "Funnel Sans", sans-serif';
-      context.fillText("EU APOIO QUEM ESTÁ COMEÇANDO", 64, 142);
-      let fontSize = 64;
-      do {
-        context.font = `700 ${fontSize}px "Funnel Display", sans-serif`;
-        fontSize -= 2;
-      } while (context.measureText(card.name).width > 760 && fontSize > 20);
-      context.fillText(card.name, 64, 290, 760);
-      context.font = '400 27px "Funnel Sans", sans-serif';
-      context.fillText(
-        "Juntos, abrimos portas para novos talentos.",
-        64,
-        355,
-        760,
-      );
-      context.font = '400 22px "Funnel Sans", sans-serif';
-      context.fillText(card.website, 64, 414, 760);
-      context.fillText("apoia.se/soujunior", 64, 555);
-      if (card.photo) {
-        const image = new Image();
-        image.src = card.photo;
-        await image.decode();
-        const side = Math.min(image.width, image.height);
-        context.save();
-        context.beginPath();
-        context.arc(1010, 290, 116, 0, Math.PI * 2);
-        context.clip();
-        context.drawImage(
-          image,
-          (image.width - side) / 2,
-          (image.height - side) / 2,
-          side,
-          side,
-          894,
-          174,
-          232,
-          232,
+      const preview = previewRef.current;
+      if (!preview) throw new Error("Preview unavailable");
+      const bounds = preview.getBoundingClientRect();
+      const scale = 3;
+      const copyWithComputedStyles = async (element: Element): Promise<Element> => {
+        const clone = element.cloneNode(false) as Element;
+        const computed = window.getComputedStyle(element);
+        clone.setAttribute(
+          "style",
+          Array.from(computed)
+            .map((property) => `${property}:${computed.getPropertyValue(property)};`)
+            .join(""),
         );
-        context.restore();
-      } else {
-        context.strokeStyle = "#c8d3ff";
-        context.lineWidth = 4;
-        context.beginPath();
-        context.arc(1010, 290, 116, 0, Math.PI * 2);
-        context.stroke();
-        context.font = '700 80px "Funnel Display", sans-serif';
-        context.textAlign = "center";
-        context.fillText(card.name.slice(0, 1).toUpperCase(), 1010, 318);
-      }
+        if (element instanceof HTMLImageElement && clone instanceof HTMLImageElement) {
+          await element.decode();
+          const imageCanvas = document.createElement("canvas");
+          imageCanvas.width = element.naturalWidth;
+          imageCanvas.height = element.naturalHeight;
+          const imageContext = imageCanvas.getContext("2d");
+          if (!imageContext) throw new Error("Could not embed preview image");
+          imageContext.drawImage(element, 0, 0);
+          clone.src = imageCanvas.toDataURL("image/png");
+        }
+        for (const child of Array.from(element.childNodes)) {
+          clone.appendChild(
+            child instanceof Element
+              ? await copyWithComputedStyles(child)
+              : child.cloneNode(true),
+          );
+        }
+        return clone;
+      };
+      const styledPreview = await copyWithComputedStyles(preview);
+      const markup = new XMLSerializer().serializeToString(styledPreview);
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${bounds.width * scale}" height="${bounds.height * scale}" viewBox="0 0 ${bounds.width} ${bounds.height}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="width:${bounds.width}px;height:${bounds.height}px">${markup}</div></foreignObject></svg>`;
+      const svgUrl = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml;charset=utf-8" }));
+      const image = new Image();
+      image.src = svgUrl;
+      await image.decode();
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(bounds.width * scale);
+      canvas.height = Math.round(bounds.height * scale);
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("Canvas unavailable");
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(svgUrl);
       const blob = await new Promise<Blob>((resolve, reject) =>
         canvas.toBlob(
           (value) =>
@@ -178,7 +167,10 @@ export default function SupporterCard() {
         <input
           id="supporter-name"
           value={name}
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => {
+            setName(event.target.value);
+            setError("");
+          }}
           maxLength={60}
           required
           placeholder="Seu nome"
@@ -206,7 +198,6 @@ export default function SupporterCard() {
           onChange={selectProof}
           aria-describedby="proof-help"
         />
-        <small id="proof-help">{proofName ? "Comprovante selecionado" : ""}</small>
         <label htmlFor="supporter-photo">Foto (opcional)</label>
         <label className="upload-control" htmlFor="supporter-photo">
           <span className="upload-icon" aria-hidden="true">↥</span>
@@ -253,7 +244,7 @@ export default function SupporterCard() {
         aria-label="Prévia do card"
         aria-live="polite"
       >
-        <div className={`preview-card ${card ? "has-card" : ""}`}>
+        <div ref={previewRef} className={`preview-card ${card ? "has-card" : ""}`}>
           <div className="preview-card-top">
             <img className="preview-logo" src={assets.logo} alt="" />
             <span className="preview-badge">Mantenedor</span>
