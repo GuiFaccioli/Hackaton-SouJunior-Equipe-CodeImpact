@@ -1,7 +1,9 @@
-﻿import mascot from "../design/pendev/assets/image-import-24.png";
+import mascot from "../design/pendev/assets/image-import-24.png";
+import mascotMobile from "../design/pendev/assets/mascote-soujunior-02-sem-fundo.png";
 import mascotCropped from "../design/pendev/assets/mascot-cropped.png";
 import logo from "../design/pendev/assets/image-import-6.png";
 import coins from "../design/pendev/assets/image-import-5.png";
+import coinsMobile from "../design/pendev/assets/coins-mobile-cel.png";
 import topCardLogo from "../design/pendev/assets/image-import-29.png";
 import topCardAvatar from "../design/pendev/assets/image-import-32.png";
 import support from "../design/pendev/assets/image-import.png";
@@ -28,9 +30,11 @@ import muralSmallAvatar from "../design/pendev/assets/image-import-66.png";
 
 export const assets = {
   mascot,
+  mascotMobile,
   mascotCropped,
   logo,
   coins,
+  coinsMobile,
   topCardLogo,
   topCardAvatar,
   support,

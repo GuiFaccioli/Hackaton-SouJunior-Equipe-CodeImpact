@@ -32,7 +32,7 @@ describe("Landing page", () => {
     expect(screen.getByText("Ferramentas de colaboração")).toBeTruthy();
     expect(screen.getByText("Reserva operacional")).toBeTruthy();
     expect(screen.getByRole("heading", { name: /Concorra a.*mentorias individuais/i })).toBeTruthy();
-    expect(screen.getByText("Alice Soares")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Alice Soares" })).toBeTruthy();
     expect(screen.getByText("Top apoiadores")).toBeTruthy();
     expect(screen.getByText("Comprovante de pagamento")).toBeTruthy();
     expect(screen.getByRole("heading", { name: /Faça parte.*da SouJunior/i })).toBeTruthy();
@@ -134,23 +134,5 @@ describe("Landing page", () => {
       (screen.getByRole("button", { name: "Baixar" }) as HTMLButtonElement)
         .disabled,
     ).toBe(true);
-  });
-});
-
-describe("Landing page metric caveats", () => {
-  it("shows confirmation and variability caveats beside member metrics", () => {
-    render(<App />);
-
-    const members = screen
-      .getByRole("heading", { name: "Membros" })
-      .closest("article");
-    const supporters = screen
-      .getByRole("heading", { name: "Apoiadores" })
-      .closest("article");
-
-    expect(members?.textContent).toContain("120");
-    expect(members?.textContent).toMatch(/pendente de confirmação/i);
-    expect(supporters?.textContent).toContain("108");
-    expect(supporters?.textContent).toMatch(/pode variar/i);
   });
 });

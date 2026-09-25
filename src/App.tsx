@@ -1,4 +1,5 @@
-﻿import { useState } from "react";
+import { useState } from "react";
+import { useCircularTrack } from "./useCircularTrack";
 import { assets } from "./assets";
 import SupporterCard from "./SupporterCard";
 
@@ -143,6 +144,8 @@ function SocialIcon({
 }
 
 function OfficialLanding() {
+  const metricsRef = useCircularTrack(20);
+  const mentorsRef = useCircularTrack(20);
   const [menuOpen, setMenuOpen] = useState(false);
   const [quoteIndex, setQuoteIndex] = useState(1);
   const quote = testimonials[quoteIndex];
@@ -224,16 +227,21 @@ function OfficialLanding() {
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <section className="hero" id="inicio" aria-labelledby="hero-title">
         <div className="hero-art" aria-hidden="true">
+          <div className="hero-art-composition">
           <div className="hero-art-background" />
           <div className="hero-mascot-clip">
             <div className="hero-mascot-layer">
               <picture>
+                <source media="(max-width: 800px)" srcSet={assets.mascotMobile} />
                 <source media="(min-width: 801px)" srcSet={assets.mascotCropped} />
                 <img className="hero-mascot" src={assets.mascot} alt="" fetchPriority="high" />
               </picture>
             </div>
           </div>
-          <img className="hero-coins" src={assets.coins} alt="" />
+          <picture className="hero-coins-picture">
+            <source media="(max-width: 800px)" srcSet={assets.coinsMobile} />
+            <img className="hero-coins" src={assets.coins} alt="" />
+          </picture>
           <div className="floating-member">
             <div className="member-top">
               <img src={assets.topCardLogo} alt="" />
@@ -248,21 +256,24 @@ function OfficialLanding() {
             <img src={assets.support} alt="" />
             <div><small>apoio recebido</small><strong>Todo apoio ajuda<br />manter a mentoria no ar!</strong></div>
           </div>
+          </div>
         </div>
         <div className="hero-backdrop" aria-hidden="true" />
         <div className="hero-overlay" aria-hidden="true" />
         <header className="header wide-container">
+          <div className="header-actions">
+            <button className="menu-toggle" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "✕" : "☰"}</button>
+            <nav id="main-nav" className={menuOpen ? "nav is-open" : "nav"} aria-label="Menu principal" onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}>
+              {navigation.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
+              <SupportLink light />
+            </nav>
+          </div>
           <a href="#inicio" aria-label="SouJunior — início"><img className="logo" src={assets.logo} alt="SouJunior" width="164" height="67" /></a>
-          <button className="menu-toggle" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "✕" : "☰"}</button>
-          <nav id="main-nav" className={menuOpen ? "nav is-open" : "nav"} aria-label="Menu principal" onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}>
-            {navigation.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
-            <SupportLink light />
-          </nav>
         </header>
         <div className="hero-copy">
           <span className="eyebrow">Plataforma Apoia.se</span>
           <div className="hero-text">
-            <h1 id="hero-title">Apoiar a<br />SouJunior é<br />investir em quem<br />está começando</h1>
+            <h1 id="hero-title"><span className="desktop-hero-title">Apoiar a<br />SouJunior é<br />investir em quem<br />está começando</span><span className="mobile-hero-title">Apoiar a SouJunior é investir em quem está começando</span></h1>
             <p>Doe e concorra a mentorias individuais com quem já trilhou esse caminho.</p>
           </div>
           <div className="hero-actions"><SupportLink light /><a className="button button-outline" href="#causa">Conhecer a causa</a></div>
@@ -318,8 +329,18 @@ function OfficialLanding() {
           </section>
           <section id="impacto" className="impact-section" aria-labelledby="impact-title">
             <h2 id="impact-title">Números que<br />mostram o impacto</h2>
-            <div className="metrics wide-container">
-              {metrics.map(([value, label, text]) => <article className="metric" key={label}><img src={assets.impactMark} alt="" /><strong>{value}</strong><h3>{label}</h3><p>{text}</p></article>)}
+            <div className="metrics wide-container" ref={metricsRef}>
+              <div className="metrics-track">
+                {[0, 1].map((set) => <div className="metrics-set" key={set} aria-hidden={set === 1}>
+                  {[
+                    ["+35", "Projetos ativos", "Projetos que conectam talentos a desafios reais."],
+                    ["+50", "Mentores voluntários", "Experiência compartilhada para acelerar novas carreiras."],
+                    ["+3", "Anos de comunidade", "Uma jornada de colaboração, aprendizado e impacto."],
+                    ["+120", "Devs formados", "Talentos preparados para transformar ideias em soluções."],
+                    ["+108", "Empresas parceiras", "Parcerias que fortalecem oportunidades na tecnologia."],
+                  ].map(([value, label, text]) => <article className="metric" key={`${set}-${label}`}><img src={assets.impactMark} alt="" /><strong>{value}</strong><h3>{label}</h3><p>{text}</p></article>)}
+                </div>)}
+              </div>
             </div>
           </section>
         </section>
@@ -390,7 +411,13 @@ function OfficialLanding() {
 
           <section id="mentorias" className="mentorship-section" aria-labelledby="mentorship-title">
             <div className="mentorship-heading"><span className="eyebrow">Premiação</span><h2 id="mentorship-title">Concorra a<br />mentorias individuais</h2><p>Conheça quem mentora.<br />Quanto mais você doa, mais chances tem de ser sorteado. O sorteio acontece uma vez por mês.</p></div>
-            <div className="mentor-grid wide-container">{mentors.map(([name, role, description, image]) => <article className="mentor-card" key={name}><img src={image} alt="" /><h3>{name} <span aria-hidden="true">✦</span></h3><strong>Mentora SouJúnior</strong><span>{role}</span><p>{description}</p></article>)}</div>
+            <div className="mentor-grid wide-container" ref={mentorsRef}>
+              <div className="mentor-track">
+                {[0, 1].map((set) => <div className="mentor-set" key={set} aria-hidden={set === 1}>
+                  {mentors.map(([name, role, description, image]) => <article className="mentor-card" key={`${set}-${name}`}><img src={image} alt="" /><h3>{name} <span aria-hidden="true">✦</span></h3><strong>Mentora SouJúnior</strong><span>{role}</span><p>{description}</p></article>)}
+                </div>)}
+              </div>
+            </div>
           </section>
 
           <section id="comunidade" className="community-section" aria-labelledby="community-title">
@@ -402,6 +429,7 @@ function OfficialLanding() {
 
       <footer className="footer">
         <div className="footer-inner wide-container">
+          <img className="footer-mobile-logo" src={assets.logo} alt="SouJunior" width="164" height="67" loading="lazy" />
           <nav className="social-links" aria-label="Canais oficiais">
             <a href={campaign} target="_blank" rel="noreferrer" aria-label="Apoia.se"><SocialIcon kind="apoia" /></a>
             <a href="https://www.instagram.com/soujunior.tech/" target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon kind="instagram" /></a>
@@ -414,6 +442,7 @@ function OfficialLanding() {
         </div>
         <div className="footer-bottom wide-container"><a href="#inicio" aria-label="SouJunior — voltar ao início"><img className="logo" src={assets.logo} alt="SouJunior" width="164" height="67" loading="lazy" /></a><nav aria-label="Navegação do rodapé">{[...navigation.slice(0, 3), ["Como ajudar", "apoio"] as const].map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav></div>
       </footer>
+      <div className="sticky-cta" aria-label="Apoiar agora"><strong>Apoiar agora</strong><SupportLink>R$ 2/mês</SupportLink></div>
     </div>
   );
 }
