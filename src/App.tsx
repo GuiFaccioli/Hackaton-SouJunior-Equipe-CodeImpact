@@ -10,6 +10,89 @@ const navigation = [
   ["Comunidade", "comunidade"],
   ["Como apoiar", "apoio"],
 ];
+const metrics = [
+  [
+    "35",
+    "Mentores ativos",
+    "Experiência compartilhada para acelerar novas carreiras.",
+  ],
+  ["+50", "Pessoas empregadas", "Novas oportunidades por meio da SouJunior."],
+  ["3", "Projetos em desenvolvimento", "Talentos conectados a desafios reais."],
+  [
+    "120",
+    "Membros",
+    "Uma comunidade que aprende e constrói junto. Número pendente de confirmação.",
+  ],
+  [
+    "108",
+    "Apoiadores",
+    "Pessoas que ajudam a manter essa história viva. O número pode variar.",
+  ],
+];
+const expenses = [
+  {
+    name: "Servidores e infraestrutura",
+    description: "Servidores e infraestrutura",
+    value: "R$ 320",
+    percent: 45.71,
+    image: assets.server,
+  },
+  {
+    name: "Ferramentas de colaboração",
+    description: "Ferramentas de colaboração",
+    value: "R$ 180",
+    percent: 25.71,
+    image: assets.collaboration,
+  },
+  {
+    name: "Plataformas e domínios",
+    description: "Plataformas e domínios",
+    value: "R$ 90",
+    percent: 12.86,
+    image: assets.platform,
+  },
+  {
+    name: "Comunicação e design",
+    description: "Comunicação e design",
+    value: "R$ 60",
+    percent: 8.57,
+    image: assets.communication,
+  },
+  {
+    name: "Reserva Operacional",
+    description: "Reserva Operacional",
+    value: "R$ 50",
+    percent: 7.14,
+    image: assets.reserve,
+  },
+];
+const testimonials = [
+  {
+    quote:
+      "Eu estava estudando e fazendo cursos de Product Management, mas foi na Sou Junior que tive a oportunidade de aplicar esse conhecimento em projetos reais, com orientação e mentoria.",
+    name: "Thais Escobar",
+    role: "Product Owner",
+    initial: "TE",
+    linkedinUrl: "https://www.linkedin.com/in/thais-escobar/",
+  },
+  {
+    quote:
+      "Como Mentora de Produto na SouJunior, ajudei iniciantes e pessoas em transição para Produto Digital a vivenciar a dinâmica de uma empresa de software, explorando problemas e soluções. Também mentorei integrantes de Design, que passaram a tomar boas decisões em pouco tempo, alinhados à estratégia da squad.",
+    name: "Manoela Albertoni",
+    role: "Associate Product Manager",
+    initial: "RM",
+    linkedinUrl: "https://www.linkedin.com/in/manoela-albertoni/",
+  },
+   {
+    quote:
+      "A interação com a comunidade e com os squads acabou proporcionando não apenas troca de conhecimento, mas também oportunidades de participar de novos projetos e até mesmo conhecer vagas que surgiram por meio dessas conexões.",
+    name: "Renan Marques",
+    role: "Associate Product Manager",
+    initial: "RM",
+    linkedinUrl: "",
+  },
+];
+
 function SupportLink({
   children = "Apoiar",
   light = false,
@@ -30,8 +113,34 @@ function SupportLink({
   );
 }
 
-function SocialIcon({ kind }: { kind: string }) {
-  return <span className={`social-glyph social-glyph-${kind}`} aria-hidden="true" />;
+function SocialIcon({
+  kind,
+}: {
+  kind: "apoia" | "instagram" | "linkedin" | "github" | "discord";
+}) {
+  return (
+    <svg className="social-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      {kind === "apoia" && (
+        <text x="12" y="18" textAnchor="middle" fontSize="19" fontWeight="700">a</text>
+      )}
+      {kind === "instagram" && (
+        <>
+          <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+          <circle cx="17.5" cy="6.5" r="1.25" />
+        </>
+      )}
+      {kind === "linkedin" && (
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.1h2.97v9.24ZM6.45 7.84a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.5h-2.97v-4.5c0-1.07-.02-2.44-1.49-2.44-1.49 0-1.72 1.16-1.72 2.36v4.58H9.19V9.1h2.85v1.26h.04c.4-.73 1.37-1.49 2.82-1.49 3.01 0 3.57 1.98 3.57 4.56v4.91Z" />
+      )}
+      {kind === "github" && (
+        <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.68-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.2 3.26.92.1-.73.39-1.22.71-1.5-2.48-.29-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.15a10.64 10.64 0 0 1 5.56 0c2.12-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.12 2.96.71.78 1.14 1.78 1.14 3.01 0 4.29-2.62 5.22-5.11 5.5.4.35.76 1.03.76 2.08V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z" />
+      )}
+      {kind === "discord" && (
+        <path d="M19.7 5.1a18 18 0 0 0-4.4-1.4l-.55 1.12a16.8 16.8 0 0 0-5.5 0L8.7 3.7a18 18 0 0 0-4.4 1.4C1.5 9.3.75 13.4 1.13 17.45a18.2 18.2 0 0 0 5.42 2.73l1.17-1.9c-.64-.24-1.25-.55-1.82-.93l.45-.35a12.8 12.8 0 0 0 11.3 0l.45.35c-.57.38-1.18.7-1.82.93l1.17 1.9a18.2 18.2 0 0 0 5.42-2.73c.45-4.7-.77-8.75-3.17-12.35ZM8.55 14.8c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98 1 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Zm6.9 0c-1.08 0-1.96-.99-1.96-2.2s.86-2.2 1.96-2.2 1.98 1 1.96 2.2c0 1.21-.86 2.2-1.96 2.2Z" />
+      )}
+    </svg>
+  );
 }
 
 function OfficialLanding() {
@@ -39,6 +148,7 @@ function OfficialLanding() {
   const mentorsRef = useCircularTrack(20);
   const [menuOpen, setMenuOpen] = useState(false);
   const [quoteIndex, setQuoteIndex] = useState(1);
+  const quote = testimonials[quoteIndex];
   const transparencyRows = [
     ["Servidores e infraestrutura", "R$ 320", assets.server],
     ["Ferramentas de colaboração", "R$ 180", assets.collaboration],
@@ -179,12 +289,41 @@ function OfficialLanding() {
                 <div className="value-card"><img src={assets.server} alt="" /><strong>R$ 2</strong><span>=</span><em>1 dia de servidor</em></div>
                 <div className="value-card"><img src={assets.valueTools} alt="" /><strong>R$ 15</strong><span>=</span><em>1 semana de ferramentas</em></div>
               </div>
-              <div className="expense-card" aria-label="Gastos mensais da SouJunior">
-                <div className="expense-head"><span>Item</span><span>Mensal</span></div>
-                <div className="expense-rows">
-                  {transparencyRows.map(([name, value, icon]) => <div className="expense-row" key={name}><img src={icon} alt="" /><div className="expense-copy"><strong>{name}</strong><span className="expense-track"><i /></span></div><b>{value}</b></div>)}
-                </div>
-                <div className="expense-total"><span>Total</span><strong>R$ 700 <small>/mês</small></strong></div>
+              <div className="expense-card">
+                <table>
+                  <caption>
+                    Gastos registrados de fevereiro a setembro de 2026
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Acumulado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {expenses.map((expense) => (
+                      <tr key={expense.name}>
+                        <th scope="row">
+                          <img src={expense.image} alt="" />
+                          <span>
+                            <b>{expense.name}</b>
+                            <small>{expense.description}</small>
+                            <span className="expense-track" aria-hidden="true">
+                              <i style={{ width: `${expense.percent}%` }} />
+                            </span>
+                          </span>
+                        </th>
+                        <td>{expense.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total em 2026, até setembro</th>
+                      <td>R$ 700<small>/mês</small></td>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
           </section>
@@ -206,22 +345,56 @@ function OfficialLanding() {
           </section>
         </section>
 
-        <section className="stories-section" aria-labelledby="stories-title">
-          <div className="stories-background" aria-hidden="true" />
-          <div className="stories-fade stories-fade-left" aria-hidden="true" />
-          <div className="stories-fade stories-fade-right" aria-hidden="true" />
-          <div className="stories-heading">
-            <span className="eyebrow">Seu Impacto</span>
-            <h2 id="stories-title">Você apoia aqui<br />O impacto vai longe</h2>
-            <p>Cada real vira estrutura. Servidores no ar, mentorias gratuitas e projetos<br className="desktop-break" /> open-source que abrem a primeira porta de quem está começando.</p>
-          </div>
-          <div className="review-grid wide-container">
-            <p className="review-side">{reviews[0].quote}</p>
-            <div className="review-main" aria-live="polite"><blockquote>{activeReview.quote}</blockquote><div className="review-author"><strong>{activeReview.name}</strong><span>{activeReview.role}</span></div><div className="review-avatar" aria-hidden="true" /></div>
-            <p className="review-side">{reviews[2].quote}</p>
-          </div>
-          <div className="quote-controls" aria-label="Depoimentos">
-            {reviews.map((review, index) => <button key={review.name} aria-label={`Depoimento ${index + 1}`} aria-pressed={quoteIndex === index} onClick={() => setQuoteIndex(index)} />)}
+        <section className="stories section" aria-labelledby="stories-title">
+          <div className="container">
+            <span className="eyebrow">Seu impacto</span>
+            <h2 id="stories-title">
+              Você apoia aqui.
+              <br />O impacto vai longe.
+            </h2>
+            <p className="section-intro">
+              Cada real vira estrutura. Servidores no ar, mentorias gratuitas e
+              projetos
+              <br className="desktop-break" /> open-source que abrem a primeira
+              porta de quem está começando.
+            </p>
+            <div className="testimonial" aria-live="polite">
+              <span className="quote-mark" aria-hidden="true">
+                “
+              </span>
+              <blockquote>{quote.quote}</blockquote>
+              <div className="quote-avatar" aria-hidden="true">
+                {quote.initial}
+              </div>
+              <div className="testimonial-name">
+                <strong>{quote.name}</strong>
+                {quote.linkedinUrl && (
+                  <a
+                    className="linkedin-link"
+                    href={quote.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`LinkedIn de ${quote.name} (abre em nova aba)`}
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.1h2.97v9.24ZM6.45 7.84a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.5h-2.97v-4.5c0-1.07-.02-2.44-1.49-2.44-1.49 0-1.72 1.16-1.72 2.36v4.58H9.19V9.1h2.85v1.26h.04c.4-.73 1.37-1.49 2.82-1.49 3.01 0 3.57 1.98 3.57 4.56v4.91Z" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+              <span>{quote.role}</span>
+              <small>Comunidade SouJunior</small>
+            </div>
+            <div className="quote-controls">
+              {testimonials.map((item, index) => (
+                <button
+                  key={item.name}
+                  aria-label={`Depoimento de ${item.name}`}
+                  aria-pressed={quoteIndex === index}
+                  onClick={() => setQuoteIndex(index)}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
