@@ -12,6 +12,7 @@ export default function SupporterCard() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [readingPhoto, setReadingPhoto] = useState(false);
+  const [generatedPhoto, setGeneratedPhoto] = useState("");
   const photoVersion = useRef(0);
   const previewRef = useRef<HTMLDivElement>(null);
   const card: Card | null = name.trim()
@@ -22,6 +23,7 @@ export default function SupporterCard() {
     const file = event.target.files?.[0];
     const version = ++photoVersion.current;
     setPhoto("");
+    setGeneratedPhoto("");
     setError("");
     setReadingPhoto(false);
     if (!file) return;
@@ -70,6 +72,7 @@ export default function SupporterCard() {
       return;
     }
     setError("");
+    setGeneratedPhoto(photo);
   }
 
   function selectProof(event: ChangeEvent<HTMLInputElement>) {
@@ -246,9 +249,13 @@ export default function SupporterCard() {
             <span className="preview-badge">Mantenedor</span>
           </div>
           <div className="preview-artwork" aria-hidden="true">
-            <div className="preview-artwork-background" />
+            {!generatedPhoto && <div className="preview-artwork-background" />}
             <div className="preview-mascot-clip">
-              <img className="preview-mascot" src={assets.mascotCropped} alt="" />
+              <img
+                className={`preview-mascot ${generatedPhoto ? "preview-user-photo" : ""}`}
+                src={generatedPhoto || assets.mascotCropped}
+                alt=""
+              />
             </div>
             <img className="preview-coins" src={assets.coins} alt="" />
           </div>
