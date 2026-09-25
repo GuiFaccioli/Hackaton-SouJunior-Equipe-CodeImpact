@@ -2266,6 +2266,21 @@ blockquote {
 .footer-bottom nav { display: flex; gap: 32px; color: #fff; font-size: 14px; }
 
 @media (max-width: 1199px) {
+  .official-page,
+  .official-page .pale-stage,
+  .official-page .campaign-stage,
+  .official-page .footer {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .official-page .section-heading,
+  .official-page .impact-section > h2,
+  .official-page .stories-heading,
+  .official-page .plans-heading,
+  .official-page .mentorship-heading,
+  .official-page .community-heading {
+    width: min(100%, calc(100% - 48px));
+  }
   .official-page .hero-copy h1 { font-size: clamp(48px, 5.4vw, 72px); }
   .official-page .hero-copy p,
   .stories-heading p,
