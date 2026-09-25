@@ -262,7 +262,8 @@ export default function SupporterCard() {
               Eu apoio quem está
               <br />
               começando em tech <span aria-hidden="true">💙</span>
-            </p>
+            </p>  
+            <h5>{card?.website || ""}</h5>
           </div>
         </div>
       </div>
