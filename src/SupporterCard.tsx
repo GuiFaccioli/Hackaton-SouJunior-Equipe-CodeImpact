@@ -229,10 +229,6 @@ export default function SupporterCard() {
             {busy ? "Baixando…" : "Baixar"}
           </button>
         </div>
-        <p className="privacy-note">
-          Sua foto e seus dados ficam apenas neste navegador. Gerar um card não
-          confirma uma doação.
-        </p>
         {error && (
           <p role="alert" className="form-error">
             {error}

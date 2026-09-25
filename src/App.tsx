@@ -319,7 +319,7 @@ function OfficialLanding() {
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th scope="row">Total em 2026, até setembro</th>
+                      <th scope="row">Total</th>
                       <td>R$ 700<small>/mês</small></td>
                     </tr>
                   </tfoot>
@@ -431,8 +431,8 @@ function OfficialLanding() {
         <div className="footer-inner wide-container">
           <img className="footer-mobile-logo" src={assets.logo} alt="SouJunior" width="164" height="67" loading="lazy" />
           <nav className="social-links" aria-label="Canais oficiais">
-            <a href={campaign} target="_blank" rel="noreferrer" aria-label="Apoia.se"><SocialIcon kind="apoia" /></a>
             <a href="https://www.instagram.com/soujunior.tech/" target="_blank" rel="noreferrer" aria-label="Instagram"><SocialIcon kind="instagram" /></a>
+            <a href={campaign} target="_blank" rel="noreferrer" aria-label="Apoia.se"><SocialIcon kind="apoia" /></a>
             <a href="https://www.linkedin.com/company/soujunior/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><SocialIcon kind="linkedin" /></a>
             <a href="https://github.com/SouJunior" target="_blank" rel="noreferrer" aria-label="GitHub"><SocialIcon kind="github" /></a>
             <a href="https://discord.gg/FkBcf3vdQZ" target="_blank" rel="noreferrer" aria-label="Discord"><SocialIcon kind="discord" /></a>

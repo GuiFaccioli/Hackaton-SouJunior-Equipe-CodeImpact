@@ -590,7 +590,7 @@ tfoot td {
   text-align: center;
 }
 .stories {
-  background: #d5dfff url("../design/pendev/assets/image-import-61.png") center/cover;
+  background: #d5dfff;
   text-align: center;
   padding-block: 80px;
 }
@@ -2095,8 +2095,8 @@ blockquote {
   overflow: hidden;
   background: #d0dcfd;
 }
-.stories-background { position: absolute; inset: 0; background: url("../design/pendev/assets/image-import-13.png") center / cover; opacity: .9; }
-.stories-fade { position: absolute; top: 0; width: 741px; height: 853px; background: linear-gradient(90deg, #d0dcfd, #d0dcfd00); opacity: .78; }
+.stories-background { display: none; }
+.stories-fade { display: none; }
 .stories-fade-left { left: 0; }
 .stories-fade-right { right: 0; transform: scaleX(-1); }
 .stories-heading { position: relative; z-index: 1; width: 1186px; height: 436px; padding-top: 80px; margin-inline: auto; text-align: center; }
@@ -2372,12 +2372,12 @@ blockquote {
   .official-page .floating-support { left: 0; top: 0; width: 272px; height: 84px; padding: 12px; z-index: 6; }
   .official-page .floating-support img { width: 42px; height: 52px; }
   .official-page .floating-support strong { font-size: 13px; }
-  .official-page .hero-copy { position: absolute; inset: 77px 0 auto 0; width: 100%; margin: 0; padding: 48px 16px; text-align: center; z-index: 4; }
-  .official-page .eyebrow { margin: 0 auto; height: 34px; padding: 8px 24px; font-size: 12px; }
+  .official-page .hero-copy { position: absolute; inset: 77px 0 auto 0; width: 100%; margin: 0; padding: 48px 16px; text-align: left; z-index: 4; }
+  .official-page .eyebrow { margin: 0; height: 34px; padding: 8px 24px; font-size: 12px; }
   .official-page .hero-text { gap: 20px; margin-top: 20px; }
-  .official-page .hero-copy h1 { width: 100%; max-width: 358px; margin-inline: auto; font-size: 44px; letter-spacing: 0; line-height: 1.1; }
-  .official-page .hero-copy p { width: 100%; max-width: 358px; margin-inline: auto; font-size: 22px; line-height: 1.4; }
-  .official-page .hero-actions { width: 100%; max-width: 358px; margin-inline: auto; flex-direction: column; align-items: stretch; gap: 16px; margin-top: 31px; }
+  .official-page .hero-copy h1 { width: 100%; max-width: 358px; margin-left: 0; margin-right: auto; font-size: 44px; letter-spacing: 0; line-height: 1.1; }
+  .official-page .hero-copy p { width: 100%; max-width: 358px; margin-left: 0; margin-right: auto; font-size: 22px; line-height: 1.4; }
+  .official-page .hero-actions { width: 100%; max-width: 358px; margin-left: 0; margin-right: auto; flex-direction: column; align-items: stretch; gap: 16px; margin-top: 31px; }
   .official-page .hero-actions .button { width: 100%; height: 56px; min-width: 0; min-height: 56px; font-size: 16px; }
   .pale-stage { height: auto; min-height: 0; border-radius: 24px 24px 0 0; background-size: auto 100%; }
   .transparency-section { position: relative; top: auto; left: auto; width: 100%; height: 924px; padding: 48px 16px; }
@@ -2398,9 +2398,19 @@ blockquote {
   .official-page .value-card strong,
   .official-page .value-card span { font-size: 22px; }
   .official-page .value-card em { font-size: 13px; }
-  .expense-card { width: 100%; height: auto; min-height: 0; padding: 16px; }
-  .expense-copy strong { font-size: 16px; }
-  .expense-row > b { font-size: 17px; }
+  .expense-card { width: 100%; height: 512px; min-height: 0; padding: 16px; overflow: hidden; }
+  .expense-card caption { padding: 0 6px 10px; font-size: 11px; }
+  .expense-card thead th { padding: 6px 8px; font-size: 11px; }
+  .expense-card tbody th { padding: 8px; gap: 8px; }
+  .expense-card tbody th > img { width: 32px; height: 32px; }
+  .expense-card tbody th b { font-size: 14px; }
+  .expense-card tbody th small { margin-top: 2px; font-size: 11px; }
+  .expense-card tbody td { padding: 8px; font-size: 18px; }
+  .expense-card tbody tr:last-child th,
+  .expense-card tbody tr:last-child td { padding-bottom: 16px; }
+  .expense-card .expense-track { margin-top: 6px; height: 4px; }
+  .expense-card tfoot th { padding: 12px 8px; font-size: 10px; }
+  .expense-card tfoot td { padding: 12px 8px; font-size: 18px; }
   .impact-section { overflow: hidden; }
   .metrics { display: block; width: calc(100% + 16px); height: 289.35px; margin: 12px 0 0; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .metrics::-webkit-scrollbar { display: none; }
@@ -2484,7 +2494,8 @@ blockquote {
   .footer-bottom { width: calc(100% - 32px); height: auto; flex-direction: column; align-items: stretch; gap: 12px; }
   .footer-bottom > a { display: none !important; }
   .footer-bottom nav { display: flex; flex-direction: column; gap: 12px; color: #101f5e; }
-  .footer-bottom nav a { height: 44px; display: flex; align-items: center; justify-content: center; }
+  .footer-bottom nav { width: 100%; }
+  .footer-bottom nav a { width: 100%; height: 44px; display: flex; align-items: center; justify-content: center; padding-left: 0; font-weight: 600; }
   .sticky-cta { position: static; z-index: auto; display: flex; width: calc(100% - 32px); height: 64px; margin: 24px auto 24px; padding: 0 16px; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid #e4e8f2; border-radius: 16px; background: #fff; box-shadow: 0 10px 26px #0f19461a; color: #101f5e; }
   .sticky-cta strong { font-size: 14px; }
   .sticky-cta .button { min-height: 44px; padding: 0 20px; font-size: 14px; }
