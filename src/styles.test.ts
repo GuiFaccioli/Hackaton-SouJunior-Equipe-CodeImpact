@@ -15,6 +15,8 @@ it("keeps section backgrounds square and restores component corner radii", async
   try {
     const { container } = render(createElement(App));
     expect(cssText.length).toBeGreaterThan(0);
+    expect(cssText).toMatch(/input\.upload-input\[type="file"\]\s*\{[^}]*width:\s*1px;[^}]*height:\s*1px;/s);
+    expect(cssText).not.toMatch(/\.official-page\s*\{[^}]*max-width:\s*390px/s);
     expect(style.sheet?.cssRules.length).toBeGreaterThan(0);
     expect(cssText).toMatch(
       /\.hero-mascot\s*\{[^}]*object-fit:\s*contain;/s,
