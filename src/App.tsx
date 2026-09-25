@@ -72,15 +72,15 @@ const testimonials = [
       "Eu estava estudando e fazendo cursos de Product Management, mas foi na Sou Junior que tive a oportunidade de aplicar esse conhecimento em projetos reais, com orientação e mentoria.",
     name: "Thais Escobar",
     role: "Product Owner",
-    initial: "TE",
+    initial: "PO",
     linkedinUrl: "https://www.linkedin.com/in/thais-escobar/",
   },
   {
     quote:
       "Como Mentora de Produto na SouJunior, ajudei iniciantes e pessoas em transição para Produto Digital a vivenciar a dinâmica de uma empresa de software, explorando problemas e soluções. Também mentorei integrantes de Design, que passaram a tomar boas decisões em pouco tempo, alinhados à estratégia da squad.",
     name: "Manoela Albertoni",
-    role: "Associate Product Manager",
-    initial: "RM",
+    role: "Product Manager",
+    initial: "PM",
     linkedinUrl: "https://www.linkedin.com/in/manoela-albertoni/",
   },
    {
@@ -88,7 +88,7 @@ const testimonials = [
       "A interação com a comunidade e com os squads acabou proporcionando não apenas troca de conhecimento, mas também oportunidades de participar de novos projetos e até mesmo conhecer vagas que surgiram por meio dessas conexões.",
     name: "Renan Marques",
     role: "Associate Product Manager",
-    initial: "RM",
+    initial: "APM",
     linkedinUrl: "",
   },
 ];
@@ -451,7 +451,7 @@ function SupporterWall() {
   const top = [["Ana Costa", "Dev Frontend"], ["Ana Costa", "Dev Frontend"], ["Ana Costa", "UX/UI Designer"]];
   return <div className="supporter-wall" aria-label="Mural de apoiadores">
     <div className="wall-heading"><h3>Top apoiadores</h3></div>
-    <div className="top-supporters">{top.map(([name, role], index) => <article className={`top-supporter top-supporter-${index + 1}`} key={`${role}-${index}`}><img src={assets.muralAvatar} alt="" /><b>0{index + 1}</b><strong>{name}</strong><span>{role}</span><em>{index === 1 ? "juninho pro max" : index === 2 ? "Juninho" : "juninho pro"}</em></article>)}</div>
+    <div className="top-supporters">{top.map(([name, role], index) => <article className={`top-supporter top-supporter-${index + 1}`} key={`${role}-${index}`}><img src={assets.muralAvatar} alt="" /><b>0{index + 1}</b><strong>{name}</strong><span>{role}</span><em>{index === 1 ? "Juninho pro max" : index === 2 ? "Juninho" : "Juninho pro"}</em></article>)}</div>
     <div className="supporter-list">{[["04", "Mantenedora"], ["05", "Mantenedora"]].map(([rank, badge]) => <div className="supporter-row" key={rank}><b>{rank}</b><img src={assets.muralSmallAvatar} alt="" /><span><strong>Ana Costa</strong><small>Dev Frontend</small></span><em>{badge}</em></div>)}</div>
   </div>;
 }

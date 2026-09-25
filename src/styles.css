@@ -2193,14 +2193,15 @@ blockquote {
 .top-supporters { position: relative; height: 252px; margin-top: 16px; }
 .top-supporter { position: absolute; display: flex; flex-direction: column; gap: 4px; width: 158px; height: 207px; padding: 24px 14px 14px; background: #f7f9ff; }
 .top-supporter-1 { left: 50%; top: 0; width: 158px; height: 251px; transform: translateX(-50%); background: #dce4ff; }
-.top-supporter-1 em { position: absolute; right: 14px; bottom: 14px; left: 14px; width: auto; }
-.top-supporter-2 { left: -4px; top: 44px; width: 133px; }
-.top-supporter-3 { right: 0; top: 44px; }
+.top-supporter-1 em { position: absolute; right: auto; bottom: 14px; left: 50%; width: calc(100% - 28px); text-align: center; transform: translateX(-50%); }
+.top-supporter-2 { left: 0; top: 44px; width: 158px; }
+.top-supporter-3 { right: 0; top: 44px; width: 158px; }
 .top-supporter img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
 .top-supporter b { position: absolute; top: 100px; left: 14px; width: 24px; height: 24px; padding: 4px; background: #eef2ff; color: #2e52f2; font-size: 12px; }
 .top-supporter strong { margin-top: 8px; font-size: 14px; }
 .top-supporter span { color: #5a6690; font-size: 12px; }
 .top-supporter em { width: 100%; padding: 4px 8px; background: #eef2ff; color: #1e3fd1; font-size: 11px; font-style: normal; font-weight: 600; }
+.top-supporter.top-supporter-1 em { width: calc(100% - 28px); text-align: left; }
 .supporter-list { display: flex; flex-direction: column; gap: 8px; }
 .official-page .supporter-row { display: grid; grid-template-columns: 24px 32px 1fr auto; align-items: center; gap: 12px; width: 100%; height: 68px; margin: 0; padding: 14px; border-radius: 0; background: #f7f9ff; }
 .official-page .supporter-row > b { padding: 4px; background: #dce4ff; color: #8fa5ff; font-size: 12px; }
@@ -2467,11 +2468,13 @@ blockquote {
   .official-page .card-form .upload-input { display: none; }
   .official-page .card-preview { width: 100%; height: 516px !important; min-height: 516px; max-width: 100%; padding: 16px; }
   .official-page .supporter-wall { width: 100%; height: 492px !important; min-height: 492px; }
-  .top-supporter { width: 104.333px; height: 224px; padding: 24px 14px 14px; box-sizing: border-box; }
-  .top-supporter-1 { left: 0; top: 49.5px; height: 125px; }
-  .top-supporter-2 { left: 111.333px; top: 0; }
-  .top-supporter-3 { left: 222.667px; right: auto; top: 3px; height: 218px; }
-  .top-supporter img { width: 96px; height: 96px; }
+  .top-supporters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; height: 224px; margin-top: 16px; }
+  .top-supporter { position: relative; left: auto; right: auto; top: auto; width: auto; height: 224px; padding: 12px 6px 10px; box-sizing: border-box; transform: none; }
+  .top-supporter-1 { grid-column: 2; grid-row: 1; height: 224px; }
+  .top-supporter-2 { grid-column: 1; grid-row: 1; }
+  .top-supporter-3 { grid-column: 3; grid-row: 1; }
+  .top-supporter img { width: 64px; height: 64px; }
+  .top-supporter b { top: 66px; left: 50%; width: auto; transform: translateX(-50%); }
   .footer { height: 543px; padding: 0; background: #f5f7ff; }
   .footer-inner { display: flex; width: calc(100% - 32px); height: 307px; min-height: 0; box-sizing: border-box; padding: 16px; flex-direction: column; gap: 16px; border-radius: 16px; background: #2e52f2; color: #fff; }
   .footer-mobile-logo { display: block; order: 1; width: 164px; height: 67px; object-fit: contain; }
